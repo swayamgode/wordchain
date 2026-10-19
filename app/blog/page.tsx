@@ -10,12 +10,12 @@ export const metadata: Metadata = {
     'words ending in x', 'words ending in z', 'words ending in q',
     'shiritori tips', 'multiplayer word games', 'best words for word chain',
   ],
-  alternates: { canonical: 'https://wordchain-5hhv.onrender.com/blog' },
+  alternates: { canonical: 'https://wordchain.in/blog' },
   openGraph: {
     title: 'Word Game Blog — Guides, Trap Words & Strategies',
     description: 'Expert tactics, trap words lists, and game theory for real-time word chain battlers.',
     type: 'website',
-    url: 'https://wordchain-5hhv.onrender.com/blog',
+    url: 'https://wordchain.in/blog',
   },
 };
 
@@ -117,8 +117,8 @@ export default function BlogPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wordchain-5hhv.onrender.com' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://wordchain-5hhv.onrender.com/blog' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wordchain.in' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://wordchain.in/blog' },
     ],
   };
 

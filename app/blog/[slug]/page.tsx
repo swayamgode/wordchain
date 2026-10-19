@@ -408,14 +408,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: `${post.title} | WordChain Blog`,
     description: post.description,
     keywords: post.keywords,
-    alternates: { canonical: `https://wordchain-5hhv.onrender.com/blog/${slug}` },
+    alternates: { canonical: `https://wordchain.in/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.description,
       type: 'article',
       publishedTime: post.date,
       authors: ['WordChain'],
-      url: `https://wordchain-5hhv.onrender.com/blog/${slug}`,
+      url: `https://wordchain.in/blog/${slug}`,
       siteName: 'WordChain',
     },
     twitter: {
@@ -452,17 +452,17 @@ export default async function BlogPost({ params }: { params: Params }) {
     dateModified: post.date,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://wordchain-5hhv.onrender.com/blog/${slug}`,
+      '@id': `https://wordchain.in/blog/${slug}`,
     },
     author: {
       '@type': 'Organization',
       name: 'WordChain Team',
-      url: 'https://wordchain-5hhv.onrender.com',
+      url: 'https://wordchain.in',
     },
     publisher: {
       '@type': 'Organization',
       name: 'WordChain',
-      url: 'https://wordchain-5hhv.onrender.com',
+      url: 'https://wordchain.in',
     },
     keywords: post.keywords.join(', '),
   };
@@ -471,9 +471,9 @@ export default async function BlogPost({ params }: { params: Params }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wordchain-5hhv.onrender.com' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://wordchain-5hhv.onrender.com/blog' },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `https://wordchain-5hhv.onrender.com/blog/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wordchain.in' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://wordchain.in/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://wordchain.in/blog/${slug}` },
     ],
   };
 

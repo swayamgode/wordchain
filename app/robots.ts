@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/room/'],
       },
     ],
-    sitemap: 'https://wordchain-5hhv.onrender.com/sitemap.xml',
+    sitemap: 'https://wordchain.in/sitemap.xml',
   };
 }

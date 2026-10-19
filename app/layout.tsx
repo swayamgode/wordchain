@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'WordChain',
-    url: 'https://wordchain-5hhv.onrender.com',
+    url: 'https://wordchain.in',
   },
   twitter: {
     card: 'summary_large_image',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://wordchain-5hhv.onrender.com',
+    canonical: 'https://wordchain.in',
   },
   verification: {
     google: 'google57349f1768201984',
@@ -75,7 +75,7 @@ const jsonLd = {
   name: 'WordChain',
   alternateName: ['Word Chain Game', 'WordChain Online', 'Word Chain Multiplayer'],
   description: 'Free online multiplayer word chain game. Chain words by their last letter in real-time battles with friends. Customizable rules, multiple game modes.',
-  url: 'https://wordchain-5hhv.onrender.com',
+  url: 'https://wordchain.in',
   applicationCategory: 'GameApplication',
   applicationSubCategory: 'Word Game',
   operatingSystem: 'Any',

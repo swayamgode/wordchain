@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://wordchain-5hhv.onrender.com';
+const BASE_URL = 'https://wordchain.in';
 
 const blogSlugs = [
   'hard-letters-word-chain-q-x-z-j',
