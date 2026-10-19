@@ -1,25 +1,8 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": ".next"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/socket.io/(.*)",
-      "dest": "https://your-wordchain-backend.onrender.com/socket.io/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install --legacy-peer-deps",
   "env": {
-    "NEXT_PUBLIC_SOCKET_URL": "@wordchain_socket_url"
+    "NEXT_PUBLIC_SOCKET_URL": "https://wordchain-5hhv.onrender.com"
   }
 }
