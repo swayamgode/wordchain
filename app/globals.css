@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF7EE;
+  --foreground: #111111;
+  --card-bg: #FFFFFF;
+  --card-yellow: #FFC928;
+  --border-ink: #111111;
+  --accent-ink: #111111;
+  --font-mono: 'DM Mono', monospace, ui-monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+html {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: env(safe-area-inset-bottom, 0.5rem);
+}
+
+/* Custom Neo-Brutalist Doodle utility classes inspired by reference mockup */
+.doodle-card {
+  background: #FFFFFF;
+  border: 2.5px solid #111111;
+  border-radius: 1.5rem;
+  box-shadow: 3px 4px 0px #111111;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+@media (min-width: 640px) {
+  .doodle-card {
+    border: 3px solid #111111;
+    border-radius: 1.75rem;
+    box-shadow: 4px 5px 0px #111111;
+  }
+}
+
+.doodle-card-yellow {
+  background: #FFC928;
+  border: 3px solid #111111;
+  border-radius: 1.75rem;
+  box-shadow: 4px 5px 0px #111111;
+}
+
+.doodle-btn {
+  background: #111111;
+  color: #FFFFFF;
+  border: 3px solid #111111;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.4);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.doodle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0px rgba(0, 0, 0, 0.6);
+}
+
+.doodle-btn:active {
+  transform: translateY(1px);
+  box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.6);
+}
+
+.doodle-btn-yellow {
+  background: #FFC928;
+  color: #111111;
+  border: 3px solid #111111;
+  border-radius: 9999px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  box-shadow: 3px 4px 0px #111111;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.doodle-btn-yellow:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0px #111111;
+}
+
+.doodle-btn-yellow:active {
+  transform: translateY(1px);
+  box-shadow: 1px 2px 0px #111111;
+}
+
+.doodle-pill {
+  background: #FFFFFF;
+  border: 2px solid #111111;
+  border-radius: 9999px;
+  padding: 0.35rem 0.9rem;
+  font-weight: 700;
+  box-shadow: 2px 2px 0px #111111;
+}
+
+.doodle-badge-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 2.5px solid #111111;
+  border-radius: 1.25rem;
+  padding: 0.6rem 0.9rem;
+  box-shadow: 2px 3px 0px #111111;
+}
+
+/* Animations */
+@keyframes doodle-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes doodle-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+.animate-doodle-bounce {
+  animation: doodle-bounce 2.5s infinite ease-in-out;
+}
+
+.animate-doodle-wiggle {
+  animation: doodle-wiggle 3s infinite ease-in-out;
+}
