@@ -56,6 +56,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://wordchain-5hhv.onrender.com',
   },
+  verification: {
+    google: 'google57349f1768201984',
+  },
 };
 
 export const viewport: Viewport = {
