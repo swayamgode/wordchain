@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Volume2, VolumeX, Sparkles, User, Sword } from 'lucide-react';
+import { Volume2, VolumeX, Sparkles, User, Sword, BookOpen } from 'lucide-react';
 import { soundManager } from '../lib/audio/sounds';
 import { getLocalGuestProfile } from '../lib/supabase/client';
 import { MonsterAvatar } from './doodles/MonsterAvatars';
@@ -52,6 +52,16 @@ export const Navbar: React.FC = () => {
       <div className="flex items-center gap-1.5 sm:gap-2.5">
         {/* Install PWA Button */}
         <InstallPwaPrompt />
+
+        {/* Blog Guides */}
+        <Link
+          href="/blog"
+          onClick={() => soundManager.playClick()}
+          className="hidden sm:flex items-center gap-1.5 bg-white border-2 border-[#111111] rounded-full px-3.5 py-1.5 text-xs font-extrabold shadow-[2px_2px_0px_#111111] hover:translate-y-[-1px] transition-transform"
+        >
+          <BookOpen size={14} />
+          Blog & Guides
+        </Link>
 
         {/* Practice Mode Link */}
         <Link

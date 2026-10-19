@@ -3,7 +3,11 @@ import type { MetadataRoute } from 'next';
 const BASE_URL = 'https://wordchain-5hhv.onrender.com';
 
 const blogSlugs = [
+  'hard-letters-word-chain-q-x-z-j',
+  'word-chain-rules-variations',
+  'best-word-chain-words',
   'what-is-word-chain-game',
+  'word-chain-solver-tips',
   'word-chain-strategies-to-win',
   'best-online-word-games-2025',
   'shiritori-vs-word-chain',
@@ -52,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${BASE_URL}/blog`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: 0.9,
     },
   ];
@@ -60,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
     url: `${BASE_URL}/blog/${slug}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+    changeFrequency: 'monthly',
     priority: 0.8,
   }));
 

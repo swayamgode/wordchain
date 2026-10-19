@@ -313,14 +313,110 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* SEO FAQ & WORD GAME EXPLANATION */}
+        <section className="space-y-6 pt-4 border-t-2 border-[#111111]/10">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-xs font-black uppercase tracking-wider text-[#111111] bg-[#FFC928] px-3 py-1 rounded-full border-2 border-[#111111] shadow-[2px_2px_0px_#111111]">
+              Word Game Guide
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-black text-[#111111] mt-3">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xs sm:text-sm font-bold text-[#666666] mt-1">
+              Everything you need to know about playing WordChain online
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="doodle-card p-5 bg-white">
+              <h3 className="text-base font-black text-[#111111] mb-1.5">What is a Word Chain game?</h3>
+              <p className="text-xs sm:text-sm font-medium text-[#555555] leading-relaxed">
+                Word Chain (also known as Shiritori, Word Relay, or Last Letter game) is a sequential vocabulary battle where each player submits a word beginning with the last letter of the previous word.
+              </p>
+            </div>
+
+            <div className="doodle-card p-5 bg-white">
+              <h3 className="text-base font-black text-[#111111] mb-1.5">How do you win at WordChain?</h3>
+              <p className="text-xs sm:text-sm font-medium text-[#555555] leading-relaxed">
+                Outlast your opponents! Force them into rare starting letters like X, Z, and Q using trap words (like MATRIX or TOPAZ), or wait for their timer to run out.
+              </p>
+            </div>
+
+            <div className="doodle-card p-5 bg-white">
+              <h3 className="text-base font-black text-[#111111] mb-1.5">Can I play WordChain with friends?</h3>
+              <p className="text-xs sm:text-sm font-medium text-[#555555] leading-relaxed">
+                Yes! Simply click <Link href="/create" className="font-bold underline text-[#111111]">Create Match</Link> to generate a 6-character room code. Send the link to friends to play real-time elimination battles.
+              </p>
+            </div>
+
+            <div className="doodle-card p-5 bg-white">
+              <h3 className="text-base font-black text-[#111111] mb-1.5">Is WordChain completely free?</h3>
+              <p className="text-xs sm:text-sm font-medium text-[#555555] leading-relaxed">
+                100% free with no downloads, accounts, or paywalls required. Play right inside your web browser on mobile, tablet, or desktop.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* BOTTOM MONSTER CROWD (From mockup) */}
         <div className="w-full pt-4">
           <DoodleCrowdBanner />
         </div>
       </main>
 
-      <footer className="w-full border-t-2 border-[#111111] bg-white py-6 text-center text-xs font-bold text-[#666666] select-none">
-        <p>© 2026 WordChain — Think fast. Chain words. English Dictionary Powered.</p>
+      {/* RICH SEO FOOTER */}
+      <footer className="w-full border-t-2 border-[#111111] bg-white py-10 px-4 select-none">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div className="flex items-center gap-1.5 mb-2">
+              <span className="text-lg font-black text-[#111111]">WORD</span>
+              <span className="text-lg font-black bg-[#FFC928] px-1.5 py-0.2 rounded border border-[#111111]">CHAIN</span>
+            </div>
+            <p className="text-xs font-bold text-[#666666] leading-relaxed">
+              The #1 real-time multiplayer word chain game. Powered by official English dictionary validation.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Game Modes</h4>
+            <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
+              <li><Link href="/matchmaking" className="hover:text-[#111111]">Quick Play Matchmaking</Link></li>
+              <li><Link href="/create" className="hover:text-[#111111]">Create Custom Room</Link></li>
+              <li><Link href="/practice" className="hover:text-[#111111]">Solo vs AI Bot</Link></li>
+              <li><Link href="/local" className="hover:text-[#111111]">Local Pass & Play</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Strategy & Guides</h4>
+            <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
+              <li><Link href="/blog/hard-letters-word-chain-q-x-z-j" className="hover:text-[#111111]">Hard Letters Trap List (Q, X, Z)</Link></li>
+              <li><Link href="/blog/word-chain-strategies-to-win" className="hover:text-[#111111]">10 Strategies to Win</Link></li>
+              <li><Link href="/blog/best-word-chain-words" className="hover:text-[#111111]">100+ Best Words Arsenal</Link></li>
+              <li><Link href="/blog/word-chain-rules-variations" className="hover:text-[#111111]">Official Game Rules</Link></li>
+              <li><Link href="/blog" className="hover:text-[#111111]">All Blog Articles →</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Word Game Culture</h4>
+            <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
+              <li><Link href="/blog/shiritori-vs-word-chain" className="hover:text-[#111111]">Shiritori vs Word Chain</Link></li>
+              <li><Link href="/blog/what-is-word-chain-game" className="hover:text-[#111111]">Beginner Word Chain Guide</Link></li>
+              <li><Link href="/blog/vocabulary-building-word-games" className="hover:text-[#111111]">Cognitive Benefits</Link></li>
+              <li><Link href="/blog/best-online-word-games-2025" className="hover:text-[#111111]">Top Word Games 2025</Link></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="max-w-6xl mx-auto pt-6 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between text-xs font-bold text-[#777777] gap-3">
+          <p>© 2026 WordChain. Free online multiplayer word game.</p>
+          <div className="flex gap-4">
+            <Link href="/blog" className="hover:underline">Blog</Link>
+            <Link href="/create" className="hover:underline">Play Now</Link>
+            <Link href="/sitemap.xml" className="hover:underline">Sitemap</Link>
+          </div>
+        </div>
       </footer>
     </div>
   );
