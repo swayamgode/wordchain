@@ -388,12 +388,12 @@ export default function LandingPage() {
           </div>
 
           <div>
-            <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Strategy & Guides</h4>
+            <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Popular Guides</h4>
             <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
-              <li><Link href="/blog/hard-letters-word-chain-q-x-z-j" className="hover:text-[#111111]">Hard Letters Trap List (Q, X, Z)</Link></li>
-              <li><Link href="/blog/word-chain-strategies-to-win" className="hover:text-[#111111]">10 Strategies to Win</Link></li>
-              <li><Link href="/blog/best-word-chain-words" className="hover:text-[#111111]">100+ Best Words Arsenal</Link></li>
-              <li><Link href="/blog/word-chain-rules-variations" className="hover:text-[#111111]">Official Game Rules</Link></li>
+              <li><Link href="/blog/games-to-play-when-bored" className="hover:text-[#111111]">Games to Play When Bored</Link></li>
+              <li><Link href="/blog/games-to-play-with-friends-online" className="hover:text-[#111111]">Games to Play with Friends</Link></li>
+              <li><Link href="/blog/quick-games-to-play-online" className="hover:text-[#111111]">Fast & Quick Games (5-Min)</Link></li>
+              <li><Link href="/blog/hard-letters-word-chain-q-x-z-j" className="hover:text-[#111111]">Trap Letter List (Q, X, Z)</Link></li>
               <li><Link href="/blog" className="hover:text-[#111111]">All Blog Articles →</Link></li>
             </ul>
           </div>
@@ -401,10 +401,10 @@ export default function LandingPage() {
           <div>
             <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Word Game Culture</h4>
             <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
+              <li><Link href="/blog/best-online-word-games-2025" className="hover:text-[#111111]">Top Word Games 2026</Link></li>
               <li><Link href="/blog/shiritori-vs-word-chain" className="hover:text-[#111111]">Shiritori vs Word Chain</Link></li>
               <li><Link href="/blog/what-is-word-chain-game" className="hover:text-[#111111]">Beginner Word Chain Guide</Link></li>
               <li><Link href="/blog/vocabulary-building-word-games" className="hover:text-[#111111]">Cognitive Benefits</Link></li>
-              <li><Link href="/blog/best-online-word-games-2025" className="hover:text-[#111111]">Top Word Games 2025</Link></li>
             </ul>
           </div>
         </div>

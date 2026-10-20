@@ -21,6 +21,33 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'games-to-play-when-bored',
+    title: '15 Best Free Games to Play When Bored Online (Instant & No Download)',
+    excerpt: 'Feeling bored? Here are the best free online games to play when bored in 2026. Instant browser games, quick word puzzles, multiplayer battles, and zero download required.',
+    date: '2026-03-10',
+    readTime: '8 min read',
+    category: 'Roundup',
+    featured: true,
+  },
+  {
+    slug: 'games-to-play-with-friends-online',
+    title: '12 Fun Online Games to Play With Friends (Free & No Download Needed)',
+    excerpt: 'Looking for fun games to play with friends online? Check out the best free multiplayer browser games to play with friends on Discord, Zoom, or casual game nights.',
+    date: '2026-03-08',
+    readTime: '9 min read',
+    category: 'Multiplayer',
+    featured: true,
+  },
+  {
+    slug: 'quick-games-to-play-online',
+    title: '10 Fast & Quick Games to Play Online in 5 Minutes or Less',
+    excerpt: 'Short on time? Here are the top fast, quick games to play online in under 5 minutes. Perfect for study breaks, work pauses, and instant quick matches.',
+    date: '2026-03-05',
+    readTime: '7 min read',
+    category: 'Quick Play',
+    featured: false,
+  },
+  {
     slug: 'hard-letters-word-chain-q-x-z-j',
     title: 'Hard Letters in Word Chain: Words Ending in Q, X, Z, J & V (Trap List)',
     excerpt: 'Win matches by trapping opponents with brutal terminal letters. Comprehensive cheat sheet of words ending in X, Z, J, Q, and V plus instant recovery words.',

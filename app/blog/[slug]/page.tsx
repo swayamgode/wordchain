@@ -392,6 +392,320 @@ Train on WordChain with **5-second turn timers** in Solo Practice mode. Once you
 [Train Solo with Instant Feedback →](/practice)
     `,
   },
+  'games-to-play-when-bored': {
+    title: '15 Best Free Games to Play When Bored Online (Instant & No Download)',
+    description: 'Feeling bored? Here are the best free online games to play when bored in 2026. Instant browser games, quick word puzzles, multiplayer battles, and zero download required.',
+    keywords: [
+      'games to play when bored',
+      'fun games to play when bored',
+      'free online games when bored',
+      'browser games when bored',
+      'quick games to kill time',
+      'what to play when bored',
+      'games to play right now',
+    ],
+    date: '2026-03-10',
+    readTime: '8 min read',
+    faq: [
+      {
+        question: 'What is the best free online game to play when bored?',
+        answer: 'WordChain is rated #1 for killing boredom fast: zero downloads, instant matchmaking against real players or AI bots, and rapid 10-second turn adrenaline.',
+      },
+      {
+        question: 'Can I play these games on mobile without downloading apps?',
+        answer: 'Yes! All games on this list run directly inside mobile Chrome, Safari, or Brave without installing anything or filling your phone storage.',
+      },
+      {
+        question: 'What can I play for 5 minutes during a quick break?',
+        answer: 'Quick-round games like WordChain, Wordle, and Quick Draw are designed for 2 to 5-minute sessions that refresh your brain without eating your afternoon.',
+      },
+    ],
+    content: `
+## Top Free Online Games to Play When Bored
+
+Boredom strikes without warning. Whether you are stuck between classes, killing 10 minutes on a commute, or winding down after work, you do not want to download a 5GB installer or endure a 20-minute tutorial.
+
+You need **instant browser games**: games that load in two seconds, require zero registration, and immediately hook your brain. Here is the curated ranking of the best free online games to play when bored in 2026.
+
+---
+
+### 1. WordChain (Real-Time Multiplayer & Solo Word Battler)
+- **Genre**: Fast-paced Word Game / Strategy
+- **Platform**: Web browser (Mobile + Desktop)
+- **Best For**: 3 to 5-minute adrenaline hits, vocabulary flex, playing solo vs AI or live duels
+
+**Why it cures boredom instantly:**
+[WordChain](/matchmaking) takes the timeless classic of chain words and supercharges it with 10-second blitz countdowns, custom elimination rules, and cute Doodle Monster avatars. The core rule is delightfully simple: **each word you submit must begin with the final letter of the previous word** (e.g. *MONSTER → RADAR → ROBOT → TIGER*).
+
+With **Quick Play matchmaking**, you get paired with an opponent in under 2 seconds. Or, if you want chill solo gameplay, switch to **Practice vs Bot** mode with 3 distinct AI difficulty tiers.
+
+[Play WordChain Free Now →](/matchmaking)
+
+---
+
+### 2. Geoguessr / City Guesser
+- **Genre**: Geography / Exploration
+- **Platform**: Web browser
+- **Best For**: Curiosity-driven exploration
+
+Dropped into a panoramic 360-degree street view somewhere on planet Earth, your task is to inspect road signs, foliage, architecture, and language to guess where you are. It turns aimless wandering into a satisfying puzzle.
+
+---
+
+### 3. Quick, Draw! by Google
+- **Genre**: Casual AI Doodle
+- **Platform**: Web browser
+- **Best For**: 60-second micro-breaks
+
+Google's AI neural network gives you an object (like "a saxophone" or "a submarine"), and you have 20 seconds to doodle it while the AI guesses out loud in real time. It is hilarious, addictive, and over in under two minutes.
+
+---
+
+### 4. 2048
+- **Genre**: Sliding Number Puzzle
+- **Platform**: Web browser + Mobile
+- **Best For**: Relaxing, meditative puzzle solving
+
+Slide numbered tiles on a 4x4 grid to combine matching numbers (2+2=4, 4+4=8) until you reach the elusive 2048 tile. It requires no typing and offers a soothing, trance-like flow state when you need to disconnect.
+
+---
+
+### 5. Wordle & Wordle Archives
+- **Genre**: Daily Word Puzzle
+- **Platform**: Web browser
+- **Best For**: Morning coffee brain warmups
+
+The viral hit where you have 6 guesses to uncover a mystery 5-letter word using yellow and green tile clues. If the daily puzzle is not enough, community archives allow you to binge past puzzles continuously.
+
+---
+
+### 6. Little Alchemy 2
+- **Genre**: Crafting & Combination
+- **Platform**: Web browser
+- **Best For**: Creative tinkering
+
+Start with four fundamental elements — Earth, Air, Fire, and Water — and combine them to unlock hundreds of items, from volcanoes and dinosaurs to philosophy and spaceships.
+
+---
+
+## Comparison Table: Best Games for Boredom
+
+| Game | Setup Time | Avg Session | Players | Best Feature |
+| --- | --- | --- | --- | --- |
+| **WordChain** | 0s (Instant) | 3 - 5 mins | Solo / 1v1 / 8p | Live rapid turns & bot battles |
+| **Quick, Draw!** | 0s | 1 min | Solo | AI neural-network laughter |
+| **2048** | 0s | 5 - 10 mins | Solo | Low-stress number Zen |
+| **Geoguessr** | 10s | 5 - 15 mins | Solo / 1v1 | Virtual global travel |
+| **Little Alchemy** | 0s | 10 - 20 mins | Solo | Hundreds of discovery recipes |
+
+---
+
+## How to Pick the Right Game Right Now
+
+- **If your brain wants a quick competitive rush:** Jump into [WordChain Quick Play](/matchmaking). You will be typing within 5 seconds.
+- **If you want zero pressure and quiet focus:** Try *2048* or *Wordle*.
+- **If you have a friend online on Discord:** Spin up a private [WordChain Room](/create) and send them the 6-character room code.
+
+[Start Playing WordChain Instantly →](/create)
+    `,
+  },
+  'games-to-play-with-friends-online': {
+    title: '12 Fun Online Games to Play With Friends (Free & No Download Needed)',
+    description: 'Looking for fun games to play with friends online? Check out the best free multiplayer browser games to play with friends on Discord, Zoom, or casual game nights.',
+    keywords: [
+      'games to play with friends',
+      'games to play with friends online',
+      'online games to play with friends',
+      'free games to play with friends',
+      'multiplayer games with friends',
+      'fun games to play with friends',
+      'browser games with friends free',
+      'games to play on discord with friends',
+    ],
+    date: '2026-03-08',
+    readTime: '9 min read',
+    faq: [
+      {
+        question: 'What are the best free online games to play with friends without downloading?',
+        answer: 'Top picks include WordChain (instant 6-character room codes for word battles), Skribbl.io (drawing and guessing), Codenames Online, and Gartic Phone.',
+      },
+      {
+        question: 'How do you play WordChain with friends online?',
+        answer: 'Go to WordChain, click "Create Match", customize your turn timers and word length, and copy your 6-letter room code or direct link to invite friends instantly.',
+      },
+      {
+        question: 'Can you play these games across different devices (PC and Phone)?',
+        answer: 'Yes! Cross-platform browser play is supported on all major devices. One friend can be on an iPhone, another on an Android tablet, and another on a laptop.',
+      },
+    ],
+    content: `
+## The Best Free Multiplayer Games to Play With Friends Online
+
+Organizing game night used to mean getting everyone into the same living room or convincing your friend group to install a 40GB game update.
+
+Today, the most memorable game sessions happen **right inside the browser**. No downloads, no Steam sign-ins, and no hardware barriers.
+
+Here are the 12 most entertaining, free online multiplayer games you can play with friends right now across PC, Mac, iPhone, and Android.
+
+---
+
+### 1. WordChain (Live Elimination Word Battles)
+- **Max Players**: 2 to 12 players
+- **How to join**: Click [Create Match](/create) → share the 6-letter code
+- **Vibe**: High-energy, trash-talking vocabulary battle
+
+**Why it is a squad favorite:**
+WordChain turns vocabulary into an intense multiplayer party game. Players take turns typing words that start with the final letter of the previous player's submission before their countdown timer hits zero.
+
+**Squad Features:**
+- **Customizable Turn Timers**: Set turns to 5 seconds (pure chaos) or 20 seconds (strategic traps).
+- **Life Elimination System**: Give everyone 3 lives. Miss a turn or submit a non-dictionary word? Lose a heart!
+- **Target Word Lengths**: Restrict submissions to exact 5-letter words or open the arena to any word.
+- **Pass & Play Local Mode**: If you are in the same room, use [Local Pass & Play](/local) on a single shared phone or laptop.
+
+[Create a Private Room for Your Friends →](/create)
+
+---
+
+### 2. Skribbl.io (Pictionary on Steroids)
+- **Max Players**: 2 to 16 players
+- **Vibe**: Creative doodles, awful drawings, and inside jokes
+
+One person chooses a secret word and draws it on a shared canvas using rudimentary digital pens, while everyone else furiously types guesses into chat for points. The worse your drawing skills are, the funnier the match gets.
+
+---
+
+### 3. Gartic Phone (The Telephone Game with Drawings)
+- **Max Players**: 4 to 30 players
+- **Vibe**: Uncontrollable laughter and absurd storytelling
+
+Player 1 writes a weird sentence ("A cat giving a PowerPoint presentation"). Player 2 draws it. Player 3 sees only the drawing and writes what they think it is. By the end of the round, the original prompt has mutated into something completely unhinged.
+
+---
+
+### 4. Codenames Online
+- **Max Players**: 4 to 12+ players
+- **Vibe**: Brainy team deductive strategy
+
+Two spymasters give one-word clues linked to a grid of codename cards on screen, while teammates try to guess their team's secret operatives without hitting the deadly instant-loss assassin card.
+
+---
+
+### 5. GeoGuessr Party / City Guesser
+- **Max Players**: 2 to 50 players
+- **Vibe**: Friendly geographical sleuthing
+
+Compete in real-time lobbies to pinpoint street locations around the globe. See who can spot license plate patterns, architectural nuances, or sun angles the fastest.
+
+---
+
+## How to Set Up an Instant Game Night in 30 Seconds
+
+1. **Pick a game with zero barriers**: Games like [WordChain](/create) or *Skribbl* require zero account creation.
+2. **Jump on a voice call**: Hop into a Discord voice channel, Zoom call, or WhatsApp group call.
+3. **Drop the room link**: Generate a private room and drop the 6-character code into your squad chat.
+4. **Start competing**: Games take under 3 minutes per round, so anyone can jump in and out freely!
+
+[Launch a Custom Match on WordChain →](/create)
+    `,
+  },
+  'quick-games-to-play-online': {
+    title: '10 Fast & Quick Games to Play Online in 5 Minutes or Less',
+    description: 'Short on time? Here are the top fast, quick games to play online in under 5 minutes. Perfect for study breaks, work pauses, and instant quick matches.',
+    keywords: [
+      'quick games',
+      'quick games to play online',
+      'fast browser games',
+      '5 minute games',
+      'quick games to play with friends',
+      'short online games',
+      'quick 2 player games online',
+      'instant browser games',
+    ],
+    date: '2026-03-05',
+    readTime: '7 min read',
+    faq: [
+      {
+        question: 'What are the best quick games you can play in under 5 minutes?',
+        answer: 'WordChain Blitz, Quick Draw, Wordle, and 2048 are top-tier fast games that provide a complete, satisfying match loop in under 3 to 5 minutes.',
+      },
+      {
+        question: 'Are quick online games good for your brain during work or study breaks?',
+        answer: 'Yes! Micro-gaming breaks of 3 to 5 minutes activate cognitive focus and vocabulary recall, breaking monotony without causing dopamine fatigue or procrastination.',
+      },
+      {
+        question: 'Can I play quick games 1v1 with a friend?',
+        answer: 'Yes, WordChain features a 1v1 Blitz preset with 5-second turns, making entire elimination matches last between 90 seconds and 3 minutes.',
+      },
+    ],
+    content: `
+## The Best Quick Online Games for 5-Minute Micro-Breaks
+
+Sometimes you do not have 45 minutes for a full gaming session. You have **four minutes while waiting for water to boil**, **three minutes before a Zoom meeting**, or **five minutes between study chapters**.
+
+You need **quick games**: instant load times, rapid rounds, zero friction, and high replayability.
+
+Here are the top 10 quick games you can play right in your browser in 5 minutes or less.
+
+---
+
+### 1. WordChain (10-Second Blitz Rounds)
+- **Average Match Time**: 2 to 4 minutes
+- **Pace**: High-speed word chaining under timer pressure
+- **Mode to try**: [Play Quick Match](/matchmaking)
+
+WordChain is engineered specifically for fast gaming. Each player gets a strict 10-second countdown (or 5 seconds in Blitz mode) to submit a word that begins with the last letter of the previous word.
+
+Because turns move so fast, matches are intense, decisive, and wrapped up in minutes. You get your competitive dopamine hit, celebrate a victory, and can get right back to your day.
+
+[Play a 3-Minute Quick Match →](/matchmaking)
+
+---
+
+### 2. Google Quick, Draw!
+- **Average Match Time**: 90 seconds
+- **Pace**: Rapid 20-second doodle sketches
+
+Six doodle prompts, 20 seconds each. Can Google's machine learning model guess that your lumpy circle is actually an apple? Fast, hilarious, and over before your kettle boils.
+
+---
+
+### 3. Wordle
+- **Average Match Time**: 2 to 4 minutes
+- **Pace**: Analytical, turn-based deduction
+
+Six tries to guess a secret 5-letter word using color-coded hints. It is the gold standard of daily micro-games that challenges your deductive reasoning without draining your time.
+
+---
+
+### 4. Flappy Bird (Web Remakes)
+- **Average Match Time**: 30 seconds to 2 minutes
+- **Pace**: Twitch reflexes and rhythm
+
+One button controls flight between green pipes. Almost everyone crashes within 45 seconds, making it the ultimate bite-sized reflex test.
+
+---
+
+### 5. Higher Lower Game
+- **Average Match Time**: 2 to 3 minutes
+- **Pace**: Intuitive pop-culture trivia
+
+Does "Pizza" get searched on Google more or less each month than "Minecraft"? Test your intuition on global search trends in rapid succession.
+
+---
+
+## Why 5-Minute Games Beat Doomscrolling
+
+When taking a study or work break, most people reach for social media feeds and end up doomscrolling for 30 minutes, feeling more drained than before.
+
+In contrast, **quick active games**:
+1. **Engage executive cognitive function** (spelling, memory, spatial awareness)
+2. **Have a clear beginning and end**, preventing accidental time loss
+3. **Trigger genuine accomplishment** through mini-victories
+
+[Play a Quick WordChain Match Right Now →](/matchmaking)
+    `,
+  },
 };
 
 type Params = Promise<{ slug: string }>;

@@ -3,6 +3,9 @@ import type { MetadataRoute } from 'next';
 const BASE_URL = 'https://wordchain.in';
 
 const blogSlugs = [
+  'games-to-play-when-bored',
+  'games-to-play-with-friends-online',
+  'quick-games-to-play-online',
   'hard-letters-word-chain-q-x-z-j',
   'word-chain-rules-variations',
   'best-word-chain-words',
