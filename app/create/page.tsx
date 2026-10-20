@@ -95,14 +95,14 @@ function CreateMatchContent() {
     );
   };
 
-  const wordLengths: { value: WordLengthOption; label: string }[] = [
-    { value: '3', label: '3 Letters' },
-    { value: '4', label: '4 Letters' },
-    { value: '5', label: '5 Letters' },
-    { value: '6', label: '6 Letters' },
-    { value: '7', label: '7 Letters' },
-    { value: '8', label: '8 Letters' },
-    { value: 'any', label: 'Any Length' },
+  const wordLengths: { value: WordLengthOption; label: string; short: string }[] = [
+    { value: '3', label: '3 Letters', short: '3L' },
+    { value: '4', label: '4 Letters', short: '4L' },
+    { value: '5', label: '5 Letters', short: '5L' },
+    { value: '6', label: '6 Letters', short: '6L' },
+    { value: '7', label: '7 Letters', short: '7L' },
+    { value: '8', label: '8 Letters', short: '8L' },
+    { value: 'any', label: 'Any Length', short: 'Any' },
   ];
 
   const timers: { value: TurnTimerOption; label: string }[] = [
@@ -215,7 +215,8 @@ function CreateMatchContent() {
                         : 'bg-neutral-50 hover:bg-neutral-100'
                     }`}
                   >
-                    {opt.label}
+                    <span className="hidden xs:inline">{opt.label}</span>
+                    <span className="xs:hidden">{opt.short}</span>
                   </button>
                 ))}
               </div>

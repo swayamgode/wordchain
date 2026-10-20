@@ -47,64 +47,64 @@ export default function LandingPage() {
       <TopoDoodlePattern opacity={0.07} />
       <Navbar />
 
-      <main className="relative z-10 w-full max-w-6xl mx-auto px-4 py-6 sm:py-10 flex-1 flex flex-col gap-10 sm:gap-14">
+      <main className="relative z-10 w-full max-w-6xl mx-auto px-3.5 sm:px-4 py-4 sm:py-10 flex-1 flex flex-col gap-8 sm:gap-14">
         {/* HERO SECTION */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           {/* Left Hero Card */}
-          <div className="lg:col-span-7 flex flex-col gap-5">
-            <div className="inline-flex items-center gap-2 bg-[#FFC928] text-xs font-black uppercase px-3.5 py-1.5 rounded-full border-2 border-[#111111] shadow-[2px_2px_0px_#111111] w-fit">
-              <Sparkles size={14} />
-              Real-time Multiplayer Word Battler
+          <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5">
+            <div className="inline-flex items-center gap-2 bg-[#FFC928] text-[11px] sm:text-xs font-black uppercase px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border-2 border-[#111111] shadow-[2px_2px_0px_#111111] w-fit">
+              <Sparkles size={13} className="shrink-0" />
+              <span>Real-time Multiplayer Word Battler</span>
             </div>
 
             <h1 className="text-3xl sm:text-6xl font-black text-[#111111] tracking-tight leading-[1.08]">
               Think fast. <br />
-              <span className="bg-[#FFC928] px-3 py-0.5 rounded-2xl border-[2.5px] sm:border-[3px] border-[#111111] shadow-[3px_3px_0px_#111111] sm:shadow-[4px_4px_0px_#111111] inline-block mt-1">
+              <span className="bg-[#FFC928] px-2.5 sm:px-3 py-0.5 rounded-xl sm:rounded-2xl border-[2px] sm:border-[3px] border-[#111111] shadow-[2.5px_2.5px_0px_#111111] sm:shadow-[4px_4px_0px_#111111] inline-block mt-1">
                 Chain words.
               </span>
             </h1>
 
-            <p className="text-sm sm:text-lg font-bold text-[#555555] max-w-xl">
+            <p className="text-xs sm:text-lg font-bold text-[#555555] max-w-xl leading-relaxed">
               Connect words by their final letters before the clock strikes zero.
               Challenge friends with custom lengths, rapid turn limits, and elimination rules.
             </p>
 
             {/* Quick action buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-1 sm:pt-2">
               <Link
                 href="/matchmaking"
                 onClick={() => soundManager.playClick()}
-                className="doodle-btn-yellow py-3.5 px-7 text-base group justify-center text-center"
+                className="doodle-btn-yellow py-3 sm:py-3.5 px-6 sm:px-7 text-sm sm:text-base group justify-center text-center shrink-0"
               >
-                <Zap size={20} className="fill-[#111111]" />
+                <Zap size={18} className="fill-[#111111] shrink-0" />
                 <span>Play Quick Match</span>
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
                 href="/create"
                 onClick={() => soundManager.playClick()}
-                className="doodle-btn py-3.5 px-6 text-base group justify-center text-center"
+                className="doodle-btn py-3 sm:py-3.5 px-5 sm:px-6 text-sm sm:text-base group justify-center text-center shrink-0"
               >
-                <Users size={18} />
+                <Users size={18} className="shrink-0" />
                 <span>Create Match</span>
               </Link>
             </div>
 
             {/* Direct Join by Room Code */}
-            <form onSubmit={handleJoinByCode} className="flex items-center gap-2 max-w-sm pt-2">
+            <form onSubmit={handleJoinByCode} className="flex items-center gap-2 w-full max-w-sm pt-1">
               <input
                 type="text"
                 maxLength={6}
                 value={roomCodeInput}
                 onChange={e => setRoomCodeInput(e.target.value.toUpperCase())}
                 placeholder="ENTER 6-CHAR CODE"
-                className="flex-1 bg-white border-2 border-[#111111] rounded-full px-4 py-2 font-mono text-sm font-black tracking-widest text-[#111111] shadow-[2px_2px_0px_#111111] focus:outline-none uppercase"
+                className="flex-1 min-w-0 bg-white border-2 border-[#111111] rounded-full px-3.5 sm:px-4 py-2 font-mono text-xs sm:text-sm font-black tracking-widest text-[#111111] shadow-[2px_2px_0px_#111111] focus:outline-none uppercase"
               />
               <button
                 type="submit"
                 disabled={roomCodeInput.trim().length !== 6}
-                className="doodle-btn py-2 px-4 text-xs shrink-0 disabled:opacity-40"
+                className="doodle-btn py-2 px-3.5 sm:px-4 text-xs shrink-0 disabled:opacity-40"
               >
                 <Search size={14} />
                 <span>Join</span>
@@ -113,21 +113,21 @@ export default function LandingPage() {
           </div>
 
           {/* Right Featured Hero Card (Inspired by reference mockup central yellow card) */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-sm doodle-card-yellow p-6 relative overflow-hidden flex flex-col justify-between min-h-[380px]">
+          <div className="lg:col-span-5 flex justify-center w-full">
+            <div className="w-full max-w-sm doodle-card-yellow p-5 sm:p-6 relative overflow-hidden flex flex-col justify-between min-h-[320px] sm:min-h-[380px]">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-black uppercase tracking-wider text-[#111111] bg-white px-3 py-1 rounded-full border-2 border-[#111111] shadow-[2px_2px_0px_#111111]">
+                <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#111111] bg-white px-2.5 sm:px-3 py-1 rounded-full border-2 border-[#111111] shadow-[1.5px_1.5px_0px_#111111] sm:shadow-[2px_2px_0px_#111111]">
                   Featured Preset
                 </span>
                 <span className="text-xs font-black font-mono">10s TURNS</span>
               </div>
 
               {/* Monster Mascot Illustration */}
-              <div className="my-auto text-center py-4 relative">
-                <div className="w-32 h-32 mx-auto bg-white border-[3px] border-[#111111] rounded-3xl flex items-center justify-center shadow-[4px_4px_0px_#111111] overflow-hidden animate-doodle-bounce">
-                  <MonsterAvatar id="monty" size={110} mood="happy" />
+              <div className="my-auto text-center py-3 sm:py-4 relative">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto bg-white border-[2.5px] sm:border-[3px] border-[#111111] rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-[3px_3px_0px_#111111] sm:shadow-[4px_4px_0px_#111111] overflow-hidden animate-doodle-bounce">
+                  <MonsterAvatar id="monty" size={85} mood="happy" />
                 </div>
-                <h3 className="text-2xl font-black text-[#111111] mt-3">CLASSIC CHAIN</h3>
+                <h3 className="text-xl sm:text-2xl font-black text-[#111111] mt-2.5 sm:mt-3">CLASSIC CHAIN</h3>
                 <p className="text-xs font-bold text-[#333333] max-w-[220px] mx-auto mt-1">
                   Any length words, 3 lives, last letter chaining.
                 </p>
@@ -136,7 +136,7 @@ export default function LandingPage() {
               <Link
                 href="/create?preset=classic"
                 onClick={() => soundManager.playClick()}
-                className="w-full doodle-btn py-3 text-sm justify-between group"
+                className="w-full doodle-btn py-2.5 sm:py-3 text-xs sm:text-sm justify-between group"
               >
                 <span>Launch Classic Room</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -250,7 +250,7 @@ export default function LandingPage() {
           </div>
 
           {/* Word Chain Visual Example */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 py-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 py-3 sm:py-4">
             {[
               { word: 'CAT', nextLetter: 'T' },
               { word: 'TOP', nextLetter: 'P' },
@@ -259,14 +259,14 @@ export default function LandingPage() {
               { word: 'TAP', nextLetter: 'P' },
             ].map((step, idx) => (
               <React.Fragment key={idx}>
-                <div className="bg-white border-[3px] border-[#111111] rounded-2xl px-4 py-3 font-mono text-xl sm:text-2xl font-black shadow-[3px_3px_0px_#111111] flex items-center">
+                <div className="bg-white border-2 sm:border-[3px] border-[#111111] rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-1.5 sm:py-3 font-mono text-base sm:text-2xl font-black shadow-[2px_2px_0px_#111111] sm:shadow-[3px_3px_0px_#111111] flex items-center">
                   <span>{step.word.slice(0, -1)}</span>
                   <span className="bg-[#FFC928] px-1 rounded border border-[#111111] ml-0.5">
                     {step.word.slice(-1)}
                   </span>
                 </div>
                 {idx < 4 && (
-                  <ArrowRight size={22} className="text-[#111111] stroke-[3]" />
+                  <ArrowRight size={16} className="text-[#111111] stroke-[2.5] sm:stroke-[3] sm:w-[22px] sm:h-[22px]" />
                 )}
               </React.Fragment>
             ))}

@@ -66,11 +66,11 @@ export const InstallPwaPrompt: React.FC = () => {
     <>
       <button
         onClick={handleInstallClick}
-        className="doodle-btn-yellow py-1.5 px-3 text-xs font-black shadow-[2px_2px_0px_#111111] hover:scale-105 transition-transform flex items-center gap-1.5"
+        className="doodle-btn-yellow py-1.5 px-2.5 sm:px-3 text-xs font-black shadow-[2px_2px_0px_#111111] hover:scale-105 transition-transform flex items-center gap-1.5 shrink-0"
         title="Install WordChain App"
       >
-        <Smartphone size={14} />
-        <span>Install App</span>
+        <Smartphone size={14} className="shrink-0" />
+        <span className="hidden sm:inline">Install App</span>
       </button>
 
       {/* Manual Install Instructions Modal */}

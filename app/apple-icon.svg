@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Rounded App Background -->
+  <rect width="512" height="512" rx="128" fill="#FFC928"/>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="none" stroke="#111111" stroke-width="16"/>
+
+  <!-- Monty Doodle Monster -->
+  <g transform="translate(106, 96) scale(2.5)">
+    <!-- Horns -->
+    <path d="M28 32 C18 16 10 24 16 38" stroke="#111111" stroke-width="6" stroke-linecap="round" fill="#FFC928"/>
+    <path d="M92 32 C102 16 110 24 104 38" stroke="#111111" stroke-width="6" stroke-linecap="round" fill="#FFC928"/>
+
+    <!-- Body -->
+    <rect x="24" y="30" width="72" height="68" rx="28" fill="#FFFFFF" stroke="#111111" stroke-width="6" stroke-linejoin="round"/>
+
+    <!-- Big Eyes -->
+    <ellipse cx="44" cy="50" rx="9" ry="11" fill="#FFFFFF" stroke="#111111" stroke-width="5"/>
+    <circle cx="46" cy="50" r="4.5" fill="#111111"/>
+    <circle cx="48" cy="48" r="1.5" fill="#FFFFFF"/>
+
+    <ellipse cx="76" cy="50" rx="9" ry="11" fill="#FFFFFF" stroke="#111111" stroke-width="5"/>
+    <circle cx="74" cy="50" r="4.5" fill="#111111"/>
+    <circle cx="72" cy="48" r="1.5" fill="#FFFFFF"/>
+
+    <!-- Toothy Mouth -->
+    <path d="M40 70 C40 85 80 85 80 70 Z" fill="#111111" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+    <polygon points="46,70 51,76 56,70" fill="#FFFFFF"/>
+    <polygon points="57,70 62,77 67,70" fill="#FFFFFF"/>
+    <polygon points="68,70 73,76 78,70" fill="#FFFFFF"/>
+
+    <!-- Arms -->
+    <path d="M24 64 C14 62 10 52 14 42" stroke="#111111" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M96 64 C106 62 110 52 106 42" stroke="#111111" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+    <!-- Feet -->
+    <rect x="36" y="96" width="16" height="12" rx="6" fill="#FFC928" stroke="#111111" stroke-width="5"/>
+    <rect x="68" y="96" width="16" height="12" rx="6" fill="#FFC928" stroke="#111111" stroke-width="5"/>
+  </g>
+</svg>

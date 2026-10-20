@@ -32,9 +32,9 @@ body {
 /* Custom Neo-Brutalist Doodle utility classes inspired by reference mockup */
 .doodle-card {
   background: #FFFFFF;
-  border: 2.5px solid #111111;
-  border-radius: 1.5rem;
-  box-shadow: 3px 4px 0px #111111;
+  border: 2px solid #111111;
+  border-radius: 1.25rem;
+  box-shadow: 2.5px 3px 0px #111111;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -48,9 +48,18 @@ body {
 
 .doodle-card-yellow {
   background: #FFC928;
-  border: 3px solid #111111;
-  border-radius: 1.75rem;
-  box-shadow: 4px 5px 0px #111111;
+  border: 2px solid #111111;
+  border-radius: 1.25rem;
+  box-shadow: 2.5px 3px 0px #111111;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+@media (min-width: 640px) {
+  .doodle-card-yellow {
+    border: 3px solid #111111;
+    border-radius: 1.75rem;
+    box-shadow: 4px 5px 0px #111111;
+  }
 }
 
 .doodle-btn {
