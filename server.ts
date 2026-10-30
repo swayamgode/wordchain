@@ -1,5 +1,4 @@
 import { createServer } from 'http';
-import next from 'next';
 import { Server as SocketIOServer, Socket } from 'socket.io';
 import { WordChainEngine } from './lib/engine/WordChainEngine';
 import {
@@ -20,9 +19,10 @@ import { getSettingsForPreset } from './lib/constants/presets';
 const dev = process.env.NODE_ENV !== 'production';
 const hostname = '0.0.0.0';
 const port = parseInt(process.env.PORT || '3000', 10);
-
-const app = next({ dev, hostname, port });
-const handle = app.getRequestHandler();
+const isBackendOnly =
+  process.env.BACKEND_ONLY === 'true' ||
+  Boolean(process.env.RENDER) ||
+  process.argv.includes('--backend-only');
 
 // Generate random 6-character room codes
 function generateRoomCode(): string {
@@ -39,16 +39,42 @@ const rooms = new Map<string, WordChainEngine>();
 // Active matchmaking queue
 const matchmakingQueue = new Map<string, MatchmakingRequest & { socketId: string }>();
 
-app.prepare().then(() => {
-  const httpServer = createServer(async (req, res) => {
-    try {
-      await handle(req, res);
-    } catch (err) {
-      console.error('Error handling request:', err);
-      res.statusCode = 500;
-      res.end('Internal Server Error');
-    }
-  });
+async function start() {
+  let httpServer;
+
+  if (isBackendOnly) {
+    httpServer = createServer((req, res) => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+      if (req.method === 'OPTIONS') {
+        res.writeHead(204);
+        res.end();
+        return;
+      }
+      if (req.url === '/' || req.url === '/health') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ status: 'ok', service: 'wordchain-backend' }));
+        return;
+      }
+      res.writeHead(404, { 'Content-Type': 'text/plain' });
+      res.end('Not Found');
+    });
+  } else {
+    const next = (await import('next')).default;
+    const app = next({ dev, hostname, port });
+    const handle = app.getRequestHandler();
+    await app.prepare();
+
+    httpServer = createServer(async (req, res) => {
+      try {
+        await handle(req, res);
+      } catch (err) {
+        console.error('Error handling request:', err);
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+      }
+    });
+  }
 
   const io = new SocketIOServer(httpServer, {
     cors: {
@@ -392,6 +418,11 @@ app.prepare().then(() => {
   });
 
   httpServer.listen(port, () => {
-    console.log(`> WordChain Server ready on http://${hostname}:${port}`);
+    console.log(`> WordChain ${isBackendOnly ? 'Backend' : 'Server'} ready on http://${hostname}:${port}`);
   });
+}
+
+start().catch(err => {
+  console.error('Failed to start server:', err);
+  process.exit(1);
 });

@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "tsx server.ts",
+    "dev:backend": "tsx server.ts --backend-only",
     "dev:next": "next dev",
     "build": "next build",
     "start": "tsx server.ts",
+    "start:backend": "tsx server.ts --backend-only",
     "test": "vitest run",
     "lint": "eslint"
   },

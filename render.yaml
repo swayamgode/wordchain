@@ -4,14 +4,16 @@ services:
     env: node
     plan: free
     region: oregon
-    buildCommand: npm install --legacy-peer-deps --include=dev && npm run build
-    startCommand: npm start
-    healthCheckPath: /
+    buildCommand: npm install --legacy-peer-deps
+    startCommand: npm run start:backend
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
+      - key: BACKEND_ONLY
+        value: "true"
       - key: NEXT_PUBLIC_SOCKET_URL
         sync: false
       - key: NEXT_PUBLIC_SUPABASE_URL
