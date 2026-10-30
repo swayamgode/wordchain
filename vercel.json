@@ -3,6 +3,6 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install --legacy-peer-deps",
   "env": {
-    "NEXT_PUBLIC_SOCKET_URL": "https://wordchain-5hhv.onrender.com"
+    "NEXT_PUBLIC_SOCKET_URL": "https://wordchain-73dl.onrender.com"
   }
 }
