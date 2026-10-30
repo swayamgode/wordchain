@@ -3,21 +3,19 @@ import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'WordChain — Free Online Word Chain Game | Multiplayer Word Game 2025',
+  metadataBase: new URL('https://wordchain.in'),
+  title: {
+    default: 'WordChain — Free Online Word Chain Game | Play Word Chain Online',
+    template: '%s | WordChain',
+  },
   description:
-    'Play WordChain free online — the #1 real-time multiplayer word chain game. Chain words by last letter, customize rules, play with friends or solo. Like Shiritori, word relay, and word ladder games. No download needed.',
+    'Play WordChain free online — the #1 real-time multiplayer word chain game. Chain words by their last letter, compete in blitz duels, play with friends or solo vs bots. Free, instant, no download.',
   keywords: [
-    'word chain game', 'word chain game online', 'word chain game multiplayer',
-    'word game online', 'word game multiplayer', 'free word game',
-    'shiritori game', 'shiritori online', 'word relay game',
-    'word ladder game', 'last letter word game', 'word association game',
-    'vocabulary game', 'english word game', 'spelling game online',
-    'multiplayer word game', 'real time word game', 'word battle game',
-    'word puzzle game', 'brain game online', 'word chain challenge',
-    'play word chain', 'word chain with friends', 'online word games free',
-    'word games for adults', 'word games for kids', 'educational word game',
-    'competitive word game', 'word chain rules', 'how to play word chain',
-    'best word games 2025', 'browser word game', 'no download word game',
+    'wordchain', 'word chain', 'word chain game', 'wordchain game', 'word chain game online',
+    'word chain online', 'play word chain', 'play wordchain', 'free word chain game',
+    'word chain multiplayer', 'word chain with friends', 'word chain online free',
+    'word game online', 'free word game', 'shiritori online', 'word relay game',
+    'last letter word game', 'word chain solver', 'best word games 2026', 'browser word game',
   ],
   authors: [{ name: 'WordChain Game' }],
   creator: 'WordChain',
@@ -25,25 +23,40 @@ export const metadata: Metadata = {
   category: 'Games',
   classification: 'Word Games, Educational Games, Multiplayer Games',
   openGraph: {
-    title: 'WordChain — Free Online Multiplayer Word Chain Game',
+    title: 'WordChain — #1 Free Online Multiplayer Word Chain Game',
     description: 'Chain words by their last letter in real-time multiplayer battles. Customize rules, play with friends, or practice solo. Free, no download.',
     type: 'website',
     locale: 'en_US',
     siteName: 'WordChain',
     url: 'https://wordchain.in',
+    images: [
+      {
+        url: '/icons/icon-512.png',
+        width: 512,
+        height: 512,
+        alt: 'WordChain — Online Word Chain Game',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'WordChain — Free Online Word Chain Game',
     description: 'The #1 multiplayer word chain game. Play free online with friends — no download needed!',
+    images: ['/icons/icon-512.png'],
   },
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico', sizes: '48x48 32x32 16x16' },
+      { url: '/icons/icon-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
       { url: '/icons/icon.svg', type: 'image/svg+xml' },
     ],
-    apple: '/icons/icon.svg',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
     shortcut: '/favicon.ico',
   },
   appleWebApp: {
@@ -157,6 +170,37 @@ const faqJsonLd = {
   ],
 };
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'WordChain',
+  alternateName: 'Word Chain Game Online',
+  url: 'https://wordchain.in',
+  description: 'Free online multiplayer word chain game and Shiritori word battle arena.',
+  inLanguage: 'en-US',
+  publisher: {
+    '@type': 'Organization',
+    name: 'WordChain',
+    url: 'https://wordchain.in',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://wordchain.in/icons/icon-512.png',
+    },
+  },
+};
+
+const navJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: [
+    { '@type': 'SiteNavigationElement', position: 1, name: 'Play Online', url: 'https://wordchain.in/create' },
+    { '@type': 'SiteNavigationElement', position: 2, name: 'Quick Play Matchmaking', url: 'https://wordchain.in/matchmaking' },
+    { '@type': 'SiteNavigationElement', position: 3, name: 'Solo vs AI Bot Practice', url: 'https://wordchain.in/practice' },
+    { '@type': 'SiteNavigationElement', position: 4, name: 'Local 2-Player Pass & Play', url: 'https://wordchain.in/local' },
+    { '@type': 'SiteNavigationElement', position: 5, name: 'Word Chain Blog & Guides', url: 'https://wordchain.in/blog' },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -165,9 +209,18 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/icons/icon.svg" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16" />
+        <link rel="icon" href="/icons/icon-48.png" type="image/png" sizes="48x48" />
+        <link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(navJsonLd) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

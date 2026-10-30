@@ -58,14 +58,14 @@ export default function LandingPage() {
             </div>
 
             <h1 className="text-3xl sm:text-6xl font-black text-[#111111] tracking-tight leading-[1.08]">
-              Think fast. <br />
+              WordChain <br />
               <span className="bg-[#FFC928] px-2.5 sm:px-3 py-0.5 rounded-xl sm:rounded-2xl border-[2px] sm:border-[3px] border-[#111111] shadow-[2.5px_2.5px_0px_#111111] sm:shadow-[4px_4px_0px_#111111] inline-block mt-1">
-                Chain words.
+                The Word Chain Game.
               </span>
             </h1>
 
             <p className="text-xs sm:text-lg font-bold text-[#555555] max-w-xl leading-relaxed">
-              Connect words by their final letters before the clock strikes zero.
+              Play WordChain free online — connect words by their last letter before time runs out.
               Challenge friends with custom lengths, rapid turn limits, and elimination rules.
             </p>
 
@@ -358,6 +358,145 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* GUIDES & SEO SECTION */}
+        <section className="w-full max-w-4xl mx-auto px-4 py-8">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <span className="text-xs font-black uppercase tracking-wider bg-[#FFC928] px-2.5 py-1 rounded-full border border-[#111111]">
+                Master the Game
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#111111] mt-2">
+                Guides, Traps & Strategy
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="hidden sm:inline-flex items-center gap-1.5 text-xs font-black uppercase text-[#111111] bg-white border-2 border-[#111111] px-3.5 py-1.5 rounded-full shadow-[2px_2px_0px_#111111] hover:translate-y-[-1px] transition-transform"
+            >
+              All Articles →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Link
+              href="/blog/word-chain-game-online-free"
+              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
+                  Play Guide
+                </span>
+                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
+                  Word Chain Game Online — Play Free in 2026
+                </h3>
+                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
+                  Official guide to real-time multiplayer battles, rules, and AI practice modes.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
+            </Link>
+
+            <Link
+              href="/blog/word-chain-words-a-to-z-dictionary"
+              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
+                  Cheat Sheet
+                </span>
+                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
+                  A to Z Word Chain Dictionary & Tactical List
+                </h3>
+                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
+                  Comprehensive lists of starting and ending words for difficult letters from A to Z.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
+            </Link>
+
+            <Link
+              href="/blog/hard-letters-word-chain-q-x-z-j"
+              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
+                  Tactics
+                </span>
+                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
+                  Words Ending in Q, X, Z & J: The Ultimate Trap List
+                </h3>
+                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
+                  Trap your opponents with brutal ending letters they cannot answer before timeout.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
+            </Link>
+
+            <Link
+              href="/blog/shiritori-word-chain-generator-solver"
+              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
+                  Solver Tips
+                </span>
+                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
+                  Word Chain Solver & Fast Next Word Strategies
+                </h3>
+                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
+                  How to retrieve high-probability words in under 3 seconds during intense blitz rounds.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
+            </Link>
+
+            <Link
+              href="/blog/games-to-play-when-bored"
+              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
+                  Roundup
+                </span>
+                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
+                  15 Best Free Games to Play When Bored Online
+                </h3>
+                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
+                  Instant browser games with zero downloads or accounts required.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
+            </Link>
+
+            <Link
+              href="/blog/what-is-word-chain-game"
+              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
+                  Beginner
+                </span>
+                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
+                  What Is Word Chain? Complete Beginner Rules
+                </h3>
+                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
+                  History, game variants like Shiritori and Word Relay, and official rules.
+                </p>
+              </div>
+              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
+            </Link>
+          </div>
+
+          <div className="mt-4 text-center sm:hidden">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-[#111111] bg-white border-2 border-[#111111] px-4 py-2 rounded-full shadow-[2px_2px_0px_#111111]"
+            >
+              View All 18 Strategy Guides →
+            </Link>
+          </div>
+        </section>
+
         {/* BOTTOM MONSTER CROWD (From mockup) */}
         <div className="w-full pt-4">
           <DoodleCrowdBanner />
@@ -390,10 +529,10 @@ export default function LandingPage() {
           <div>
             <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Popular Guides</h4>
             <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
+              <li><Link href="/blog/word-chain-game-online-free" className="hover:text-[#111111]">Word Chain Game Online</Link></li>
+              <li><Link href="/blog/word-chain-words-a-to-z-dictionary" className="hover:text-[#111111]">A-Z Word Chain List</Link></li>
+              <li><Link href="/blog/shiritori-word-chain-generator-solver" className="hover:text-[#111111]">Word Chain Solver Tips</Link></li>
               <li><Link href="/blog/games-to-play-when-bored" className="hover:text-[#111111]">Games to Play When Bored</Link></li>
-              <li><Link href="/blog/games-to-play-with-friends-online" className="hover:text-[#111111]">Games to Play with Friends</Link></li>
-              <li><Link href="/blog/quick-games-to-play-online" className="hover:text-[#111111]">Fast & Quick Games (5-Min)</Link></li>
-              <li><Link href="/blog/hard-letters-word-chain-q-x-z-j" className="hover:text-[#111111]">Trap Letter List (Q, X, Z)</Link></li>
               <li><Link href="/blog" className="hover:text-[#111111]">All Blog Articles →</Link></li>
             </ul>
           </div>
@@ -401,10 +540,10 @@ export default function LandingPage() {
           <div>
             <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Word Game Culture</h4>
             <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
-              <li><Link href="/blog/best-online-word-games-2025" className="hover:text-[#111111]">Top Word Games 2026</Link></li>
+              <li><Link href="/blog/word-chain-game-for-classroom-students" className="hover:text-[#111111]">Classroom & ESL Guide</Link></li>
+              <li><Link href="/blog/word-ladder-vs-word-chain" className="hover:text-[#111111]">Word Ladder vs Word Chain</Link></li>
               <li><Link href="/blog/shiritori-vs-word-chain" className="hover:text-[#111111]">Shiritori vs Word Chain</Link></li>
               <li><Link href="/blog/what-is-word-chain-game" className="hover:text-[#111111]">Beginner Word Chain Guide</Link></li>
-              <li><Link href="/blog/vocabulary-building-word-games" className="hover:text-[#111111]">Cognitive Benefits</Link></li>
             </ul>
           </div>
         </div>

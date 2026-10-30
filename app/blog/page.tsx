@@ -21,6 +21,51 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'word-chain-game-online-free',
+    title: 'Word Chain Game Online — Play Free Multiplayer WordChain (2026)',
+    excerpt: 'Play the official WordChain game online for free! Real-time multiplayer word chain battles with friends, AI practice bots, and customizable rules. No download needed.',
+    date: '2026-03-15',
+    readTime: '8 min read',
+    category: 'Featured Game',
+    featured: true,
+  },
+  {
+    slug: 'word-chain-words-a-to-z-dictionary',
+    title: 'Word Chain Words A to Z: Complete Word List & Tactical Cheat Sheet',
+    excerpt: 'The ultimate A-Z dictionary and word list for WordChain players. Find high-scoring words, difficult starting letters, and trap endings from A to Z.',
+    date: '2026-03-14',
+    readTime: '11 min read',
+    category: 'Cheat Sheet',
+    featured: true,
+  },
+  {
+    slug: 'shiritori-word-chain-generator-solver',
+    title: 'Word Chain Solver & Next Word Finder: Strategies & Word Lists',
+    excerpt: 'Looking for a word chain solver? Learn how WordChain validates words, how to calculate the next best word under timer pressure, and win every match.',
+    date: '2026-03-12',
+    readTime: '7 min read',
+    category: 'Tactics',
+    featured: false,
+  },
+  {
+    slug: 'word-chain-game-for-classroom-students',
+    title: 'Word Chain Games for Students & Classrooms: ESL & Vocabulary Fun',
+    excerpt: 'Engage students with word chain games in the classroom. Great for ESL English learners, spelling bees, vocabulary drills, and interactive group learning.',
+    date: '2026-03-09',
+    readTime: '8 min read',
+    category: 'Education',
+    featured: false,
+  },
+  {
+    slug: 'word-ladder-vs-word-chain',
+    title: "Word Ladder vs Word Chain: Differences, Rules & How to Play Both",
+    excerpt: 'Compare Word Ladder (Weaver / Lewis Carroll puzzle) with WordChain (Shiritori / last letter game). Rules, mechanics, examples, and where to play online.',
+    date: '2026-03-07',
+    readTime: '6 min read',
+    category: 'Guide',
+    featured: false,
+  },
+  {
     slug: 'games-to-play-when-bored',
     title: '15 Best Free Games to Play When Bored Online (Instant & No Download)',
     excerpt: 'Feeling bored? Here are the best free online games to play when bored in 2026. Instant browser games, quick word puzzles, multiplayer battles, and zero download required.',
@@ -149,11 +194,32 @@ export default function BlogPage() {
     ],
   };
 
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Word Game Blog — Guides, Trap Words & Strategies',
+    description: 'The ultimate word chain resource: master offensive letter traps, learn rules, and level up vocabulary.',
+    url: 'https://wordchain.in/blog',
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: blogPosts.map((post, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `https://wordchain.in/blog/${post.slug}`,
+        name: post.title,
+      })),
+    },
+  };
+
   return (
     <main className="min-h-screen" style={{ background: '#FAF7EE' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
 
       {/* Hero */}

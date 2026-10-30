@@ -706,6 +706,330 @@ In contrast, **quick active games**:
 [Play a Quick WordChain Match Right Now →](/matchmaking)
     `,
   },
+  'word-chain-game-online-free': {
+    title: 'Word Chain Game Online — Play Free Multiplayer WordChain (2026)',
+    description: 'Play the official WordChain game online for free! Real-time multiplayer word chain battles with friends, AI practice bots, and customizable rules. No download needed.',
+    keywords: [
+      'word chain game online',
+      'play word chain',
+      'wordchain free online',
+      'word chain game',
+      'word chain multiplayer online',
+      'free word chain games',
+      'shiritori online english',
+      'browser word games',
+    ],
+    date: '2026-03-15',
+    readTime: '8 min read',
+    faq: [
+      {
+        question: 'Where can I play a word chain game online for free?',
+        answer: 'You can play directly at WordChain (wordchain.in) with zero downloads, no account registration, and no ads. Play against live opponents or solo bots.',
+      },
+      {
+        question: 'How do you play WordChain with friends online?',
+        answer: 'Click "Create Match" on WordChain, select your desired turn time and word length rules, then share the 6-letter room code or link with your friends.',
+      },
+      {
+        question: 'What happens if you run out of time in WordChain?',
+        answer: 'In elimination matches, each player has a set number of hearts (lives). Failing to submit a valid dictionary word before the timer expires costs one life.',
+      },
+    ],
+    content: `
+## Play WordChain Online Free: The Ultimate Word Battler
+
+Searching for the best **word chain game online**? Welcome to **WordChain** — the modern, real-time web platform engineered specifically for competitive and casual word chaining.
+
+Whether you grew up playing **Word Relay**, **Last Letter Game**, or Japanese **Shiritori**, WordChain brings the classic concept to life with instant matchmaking, live elimination clocks, and doodle-inspired monster battles.
+
+---
+
+### Why WordChain Is Ranked the #1 Word Chain Game
+
+1. **Instant Browser Play**: No app downloads, no App Store updates, and zero account signups. Open your browser and start typing in seconds.
+2. **Real-Time Multiplayer**: Challenge players worldwide with instant matchmaking or spin up private rooms for family and friends.
+3. **Official Dictionary Verification**: Powered by Scrabble tournament lexicons (TWL06 & CSW). Slang and typos are instantly rejected.
+4. **Solo AI Practice**: Train against AI monsters across multiple difficulties to hone your recall speed before multiplayer matches.
+5. **Cross-Platform**: Seamless play across PC, Mac, iPhone, iPad, Android, and Chromebooks.
+
+---
+
+### How to Play Word Chain Online
+
+The rules of WordChain are quick to learn, yet full of strategic depth:
+
+\`\`\`
+1. Player 1 enters: PENCIL   (ends in L)
+2. Player 2 enters: LEMON    (starts with L, ends in N)
+3. Player 3 enters: NATURE   (starts with N, ends in E)
+4. Player 1 enters: ENERGY   (starts with E, ends in Y)
+\`\`\`
+
+#### Key Rules to Remember:
+- **Last Letter Link**: Your submission must begin with the exact final letter of the previous word.
+- **Strict Timer**: Depending on the room setting, you have 5 to 15 seconds per turn.
+- **No Duplicates**: Once a word has been entered during the match, it cannot be reused.
+- **Dictionary Validity**: Submissions must be real English dictionary words.
+
+[Play WordChain Free Right Now →](/matchmaking)
+    `,
+  },
+  'word-chain-words-a-to-z-dictionary': {
+    title: 'Word Chain Words A to Z: Complete Word List & Tactical Cheat Sheet',
+    description: 'The ultimate A-Z dictionary and word list for WordChain players. Find high-scoring words, difficult starting letters, and trap endings from A to Z.',
+    keywords: [
+      'word chain words',
+      'words for word chain',
+      'word chain dictionary',
+      'word chain words list',
+      'words starting with x',
+      'words ending in z',
+      'hard letters word chain',
+      'word chain cheat sheet',
+    ],
+    date: '2026-03-14',
+    readTime: '11 min read',
+    faq: [
+      {
+        question: 'What are the hardest letters in word chain games?',
+        answer: 'X, Z, Q, J, and V are the toughest letters because very few common English words begin with them.',
+      },
+      {
+        question: 'What are 5 good words starting with X for word chain?',
+        answer: 'XENON, XYLOPHONE, XEROX, XYST, and XANTHIC are tournament-legal words that can save you when trapped on X.',
+      },
+      {
+        question: 'Which common words end in Z to trap opponents?',
+        answer: 'WALTZ, BLITZ, QUIZ, TOPAZ, JAZZ, and QUARTZ are lethal words that force your opponent to find a Z-starting word.',
+      },
+    ],
+    content: `
+## The Master WordChain A to Z Lexicon
+
+In fast-paced word chain matches, having immediate mental access to rare letters is the difference between winning and elimination.
+
+Here is the definitive **A to Z tactical cheat sheet** of emergency starting words and offensive trap endings.
+
+---
+
+### Tactical Highlights by Rare Letters
+
+#### Letter Q
+- **Escape Words (Starts with Q)**: QUICK, QUIET, QUEEN, QUOTE, QUILT, QUARK, QUARRY, QUANTUM, QUICHE
+- **Trap Words (Ends in Q)**: SUQ, TRANQ, CINQ
+
+#### Letter X
+- **Escape Words (Starts with X)**: XENON, XYLOPHONE, XEROX, XYST, XANTHIC, XENIA
+- **Trap Words (Ends in X)**: MATRIX, CLIMAX, SPHINX, REFLEX, COMPLEX, PREFIX, EQUINOX, APPENDIX
+
+#### Letter Z
+- **Escape Words (Starts with Z)**: ZERO, ZEAL, ZODIAC, ZENITH, ZINC, ZEPHYR, ZEST, ZIGZAG
+- **Trap Words (Ends in Z)**: QUIZ, WALTZ, BLITZ, TOPAZ, JAZZ, CHINTZ, QUARTZ
+
+#### Letter J
+- **Escape Words (Starts with J)**: JUNGLE, JAZZ, JOKER, JOURNEY, JUPITER, JEWEL, JUSTICE
+- **Trap Words (Ends in J)**: RAJ, HADJ
+
+---
+
+### A to Z Quick Reference Table
+
+| Letter | Quick Escape Word (Starts With) | Lethal Attack Word (Ends With) |
+|---|---|---|
+| **A** | APPLE, ANCHOR, ASTRONAUT | IGUANA, CINEMA, OPERA |
+| **B** | BRAVO, BANANA, BEACON | WEB, SNOB, VERB |
+| **C** | CYBER, CANYON, CLIMATE | MAGIC, EPIC, TOXIC |
+| **D** | DYNAMO, DOLPHIN, DRAGON | SQUID, LIQUID, HYBRID |
+| **E** | ECHO, ENERGY, ECLIPSE | BRIDGE, UNIQUE, HORSE |
+| **F** | FALCON, FLIGHT, FOSSIL | CLIFF, STAFF, REEF |
+| **G** | GALAXY, GLACIER, GUITAR | ICEBERG, SPRING, VIKING |
+| **H** | HORIZON, HELMET, HYMN | MONARCH, GRAPH, EPOCH |
+| **I** | ISLAND, IMPACT, IVORY | ORIGAMI, SUSHI, SKI |
+| **J** | JUNGLE, JUPITER, JOCKEY | RAJ, HADJ |
+| **K** | KNIGHT, KINETIC, KANGAROO | BRICK, SHOCK, ATTACK |
+| **L** | LAGOON, LASER, LUMBER | CAMEL, FOSSIL, REBEL |
+| **M** | MATRIX, METEOR, MIRROR | SYSTEM, RHYTHM, PHANTOM |
+| **N** | NEBULA, NATURE, NITROGEN | CANYON, HORIZON, FALCON |
+| **O** | ORBIT, OXYGEN, OCEAN | VOLCANO, ECHO, METRO |
+| **P** | PHOENIX, PULSE, PLANET | BISHOP, TRAP, CLAMP |
+| **Q** | QUANTUM, QUIVER, QUARTZ | SUQ, TRANQ |
+| **R** | RADAR, ROCKET, ROBOT | METEOR, ANCHOR, LASER |
+| **S** | SHADOW, SPHINX, SILENT | GENIUS, CACTUS, CRISIS |
+| **T** | TACTIC, TARGET, TEMPLE | KNIGHT, PLANET, PILOT |
+| **U** | UNIVERSE, UMBRELLA, URANIUM | GURU, MENU, TOFU |
+| **V** | VECTOR, VORTEX, VELVET | - |
+| **W** | WIZARD, WEAPON, WHISPER | SHADOW, YELLOW, MEADOW |
+| **X** | XENON, XYLOPHONE, XEROX | MATRIX, CLIMAX, EQUINOX |
+| **Y** | YACHT, YELLOW, YONDER | ENERGY, GALAXY, IVORY |
+| **Z** | ZEPHYR, ZODIAC, ZENITH | QUIZ, WALTZ, TOPAZ |
+
+[Practice Rare Letters Solo in WordChain →](/practice)
+    `,
+  },
+  'shiritori-word-chain-generator-solver': {
+    title: 'Word Chain Solver & Next Word Finder: Strategies & Word Lists',
+    description: 'Looking for a word chain solver? Learn how WordChain validates words, how to calculate the next best word under timer pressure, and win every match.',
+    keywords: [
+      'word chain solver',
+      'word chain finder',
+      'next word in word chain',
+      'word chain generator',
+      'word chain helper',
+      'word chain cheats',
+      'shiritori solver',
+    ],
+    date: '2026-03-12',
+    readTime: '7 min read',
+    faq: [
+      {
+        question: 'Is there a word chain solver to find words quickly?',
+        answer: 'While external word solvers exist, real-time games give you only 5 to 10 seconds. The most effective strategy is memorizing key letter anchors and prefix chunks.',
+      },
+      {
+        question: 'How does WordChain validate words?',
+        answer: 'WordChain uses verified dictionary data structures with instant client and server validation to verify spelling, length limits, and previous uses in under 20 milliseconds.',
+      },
+    ],
+    content: `
+## How Word Chain Solvers & Word Finders Work
+
+Many players look for a **word chain solver** or **next word generator** to help identify valid words when stuck on tough letters like Q, X, or Z.
+
+While offline dictionary lookup tools can display matching words, real-time competitive matches on **WordChain** run on rapid **5 to 10-second turn clocks**. In live play, mental speed and retrieval anchoring beat manual lookups every time.
+
+---
+
+### The 3 Core Principles of Real-Time Word Finding
+
+#### 1. Phonetic Anchoring
+Instead of searching your brain for spelling, anchor to sounds:
+- Handed **C**: Focus on the hard "K" sound (*CANDLE, COBRA, CRATER*)
+- Handed **P**: Focus on "PR" blends (*PRISM, PROMISE, PROTOCOL*)
+
+#### 2. Category Anchoring
+Group your internal vocabulary into concrete physical domains:
+- **Animals**: Panda, Panther, Pelican, Penguin
+- **Space & Science**: Planet, Photon, Proton, Plasma
+- **Food & Kitchen**: Pepper, Parsley, Pastry, Pumpkin
+
+#### 3. Defensive Letter Control
+A word solver calculates not just whether a word is valid, but what letter it leaves behind:
+- **Weak move**: Playing *DOG* (leaves **G**, easy for opponent with *GAME, GOAT*)
+- **Strong move**: Playing *DRAX* or *DUMBBELL* (forces difficult recovery)
+
+[Test Your Word Retrieval Speed on WordChain →](/practice)
+    `,
+  },
+  'word-chain-game-for-classroom-students': {
+    title: 'Word Chain Games for Students & Classrooms: ESL & Vocabulary Fun',
+    description: 'Engage students with word chain games in the classroom. Great for ESL English learners, spelling bees, vocabulary drills, and interactive group learning.',
+    keywords: [
+      'word chain game for students',
+      'word chain for classroom',
+      'esl word chain game',
+      'vocabulary games for kids',
+      'educational word games',
+      'spelling games for class',
+      'word chain lesson plan',
+    ],
+    date: '2026-03-09',
+    readTime: '8 min read',
+    faq: [
+      {
+        question: 'Why are word chain games good for language learners?',
+        answer: 'Word chain games actively reinforce phonological awareness, spelling-sound correspondence, and rapid active vocabulary recall.',
+      },
+      {
+        question: 'Can teachers use WordChain on classroom smartboards?',
+        answer: 'Yes! WordChain Pass & Play (Local mode) runs on smartboards, tablets, or shared computers with no login needed.',
+      },
+    ],
+    content: `
+## Why Word Chain Is the Ultimate Classroom Vocabulary Game
+
+Educators and ESL teachers have used word chain games for decades because they combine **zero preparation** with **high classroom participation**.
+
+With digital platforms like **WordChain**, teachers can project an interactive, animated game on a classroom smartboard or let students play in pairs on tablets and Chromebooks.
+
+---
+
+### Key Educational Benefits
+
+1. **Phonemic and Orthographic Awareness**: Students must identify both the sound and the spelling of the terminal letter.
+2. **Elimination of Passive Learning**: Turn-based countdowns keep the entire class engaged, as every student anticipates their upcoming letter.
+3. **Inclusive Skill Tiers**: Casual mode allows short 3-letter words for younger students, while advanced settings mandate 5+ letter terms for older learners.
+4. **Zero Cost and Privacy**: WordChain requires no student email addresses, logins, or software installations.
+
+---
+
+### 3 Classroom Word Chain Formats
+
+- **Whole-Class Relay**: Students form a circle. Pass a beanbag as each student submits their word within 10 seconds.
+- **Pass & Play on Smartboard**: Use WordChain [Local Match Mode](/local) on a shared class display.
+- **ESL Category Blitz**: Restrict submissions to words learned in this week's lesson unit (e.g., Environment, History, or Science).
+
+[Launch a Classroom Match on WordChain →](/local)
+    `,
+  },
+  'word-ladder-vs-word-chain': {
+    title: "Word Ladder vs Word Chain: Differences, Rules & How to Play Both",
+    description: 'Compare Word Ladder (Weaver / Lewis Carroll puzzle) with WordChain (Shiritori / last letter game). Rules, mechanics, examples, and where to play online.',
+    keywords: [
+      'word ladder vs word chain',
+      'weaver game vs word chain',
+      'word chain vs word ladder',
+      'lewis carroll word game',
+      'types of word games',
+      'word ladder rules',
+    ],
+    date: '2026-03-07',
+    readTime: '6 min read',
+    faq: [
+      {
+        question: 'What is the main difference between Word Ladder and Word Chain?',
+        answer: 'In a Word Ladder, you change one letter at a time to reach a target word (e.g. COLD → CORD → CARD → WARM). In Word Chain, each new word starts with the final letter of the previous word (e.g. COLD → DUCK → KITE).',
+      },
+      {
+        question: 'Who invented Word Ladders?',
+        answer: 'Lewis Carroll (author of Alice in Wonderland) invented Word Ladders in 1877 under the original name "Doublets".',
+      },
+    ],
+    content: `
+## Word Ladder vs Word Chain: Which Word Game Fits Your Style?
+
+Word game lovers frequently confuse **Word Ladders** with **Word Chains**. While both involve sequential vocabulary progression, their core mechanics are completely different.
+
+---
+
+### Side-by-Side Comparison
+
+| Feature | Word Ladder (Weaver) | Word Chain (WordChain) |
+|---|---|---|
+| **Core Rule** | Change **one letter** per step | Start with the **last letter** of previous word |
+| **Word Length** | Fixed (usually 4 or 5 letters) | Variable (3, 4, 5, 6+ letters) |
+| **Pace** | Slow, contemplative puzzle | High-speed, real-time blitz battle |
+| **Multiplayer** | Usually solo | 1v1 duels, multiplayer lobbies, or solo bots |
+| **Origin** | Lewis Carroll (1877) | Ancient parlor game / Japanese Shiritori |
+
+---
+
+### Example: Word Ladder
+Goal: Transform **COLD** into **WARM** by changing one character per step:
+\`\`\`
+COLD → CORD → CARD → WARD → WARM
+\`\`\`
+
+### Example: Word Chain
+Goal: Chain words continuously before timer expires:
+\`\`\`
+COLD → DUCK → KANGAROO → OCEAN → NEST
+\`\`\`
+
+If you enjoy fast-paced multiplayer competition, timer adrenaline, and playing with friends, **WordChain** is the ultimate game for you.
+
+[Play WordChain Online Free →](/create)
+    `,
+  },
 };
 
 type Params = Promise<{ slug: string }>;
