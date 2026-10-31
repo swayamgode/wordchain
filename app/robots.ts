@@ -6,12 +6,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/room/'],
+        disallow: ['/api/', '/room/', '/color-clash/room/'],
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/api/', '/room/'],
+        disallow: ['/api/', '/room/', '/color-clash/room/'],
       },
       {
         userAgent: 'Googlebot-Image',
@@ -20,7 +20,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: 'Bingbot',
         allow: '/',
-        disallow: ['/api/', '/room/'],
+        disallow: ['/api/', '/room/', '/color-clash/room/'],
       },
     ],
     sitemap: 'https://wordchain.in/sitemap.xml',

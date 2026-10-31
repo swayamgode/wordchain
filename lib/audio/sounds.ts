@@ -90,6 +90,10 @@ class SoundManager {
     });
   }
 
+  public playCorrect(): void {
+    this.playWordAccepted();
+  }
+
   /**
    * Low error buzz when a word is invalid
    */

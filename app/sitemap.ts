@@ -3,6 +3,7 @@ import type { MetadataRoute } from 'next';
 const BASE_URL = 'https://wordchain.in';
 
 const blogPostData: Record<string, string> = {
+  'rgb-color-match-game-guide': '2026-03-16',
   'word-chain-game-online-free': '2026-03-15',
   'word-chain-words-a-to-z-dictionary': '2026-03-14',
   'shiritori-word-chain-generator-solver': '2026-03-12',
@@ -60,6 +61,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date('2026-03-15'),
       changeFrequency: 'monthly',
       priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/color-clash`,
+      lastModified: new Date('2026-03-16'),
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    },
+    {
+      url: `${BASE_URL}/color-clash/create`,
+      lastModified: new Date('2026-03-16'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/color-clash/practice`,
+      lastModified: new Date('2026-03-16'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/color-clash/local`,
+      lastModified: new Date('2026-03-16'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/blog`,

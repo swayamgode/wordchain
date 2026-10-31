@@ -1,6 +1,7 @@
 import { createServer } from 'http';
 import { Server as SocketIOServer, Socket } from 'socket.io';
 import { WordChainEngine } from './lib/engine/WordChainEngine';
+import { ColorMatchEngine } from './lib/engine/ColorMatchEngine';
 import {
   createRoomSchema,
   joinRoomSchema,
@@ -8,12 +9,16 @@ import {
   toggleReadySchema,
   updateSettingsSchema,
   matchmakingQueueSchema,
+  createColorRoomSchema,
+  joinColorRoomSchema,
+  submitColorGuessSchema,
 } from './lib/validation/schemas';
 import {
   MatchmakingRequest,
   Player,
   PresetName,
 } from './lib/types/game';
+import { ColorMatchPlayer } from './lib/types/colorMatch';
 import { getSettingsForPreset } from './lib/constants/presets';
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -36,6 +41,7 @@ function generateRoomCode(): string {
 
 // In-memory active game rooms & engines
 const rooms = new Map<string, WordChainEngine>();
+const colorRooms = new Map<string, ColorMatchEngine>();
 // Active matchmaking queue
 const matchmakingQueue = new Map<string, MatchmakingRequest & { socketId: string }>();
 
@@ -395,6 +401,154 @@ async function start() {
       }
     });
 
+    // ==========================================
+    // COLOR CLASH EVENT HANDLERS
+    // ==========================================
+
+    socket.on('color_create_room', (data, callback) => {
+      try {
+        const parsed = createColorRoomSchema.safeParse(data);
+        if (!parsed.success) {
+          return callback?.({ error: parsed.error.issues[0]?.message || 'Invalid parameters' });
+        }
+
+        const roomCode = generateRoomCode();
+        const { playerName, avatarId, settings } = parsed.data;
+
+        const hostPlayer: ColorMatchPlayer = {
+          id: socket.id,
+          name: playerName,
+          avatarId,
+          isHost: true,
+          isReady: true,
+          score: 0,
+          currentGuess: null,
+          hasSubmitted: false,
+          isConnected: true,
+        };
+
+        const engine = new ColorMatchEngine(roomCode, hostPlayer, settings, {
+          onStateChange: state => {
+            io.to(roomCode).emit('color_room_state', state);
+          },
+          onRoundEnd: result => {
+            io.to(roomCode).emit('color_round_end', result);
+          },
+          onGameOver: (winnerId, winnerName) => {
+            io.to(roomCode).emit('color_game_over', { winnerId, winnerName });
+          },
+        });
+
+        colorRooms.set(roomCode, engine);
+        socket.join(roomCode);
+
+        callback?.({
+          roomCode,
+          playerId: socket.id,
+          state: engine.getSnapshot(),
+        });
+      } catch (err: unknown) {
+        callback?.({ error: err instanceof Error ? err.message : 'Failed to create color room' });
+      }
+    });
+
+    socket.on('color_join_room', (data, callback) => {
+      try {
+        const parsed = joinColorRoomSchema.safeParse(data);
+        if (!parsed.success) {
+          return callback?.({ error: parsed.error.issues[0]?.message || 'Invalid parameters' });
+        }
+
+        const { roomCode, playerName, avatarId, asSpectator } = parsed.data;
+        const engine = colorRooms.get(roomCode);
+
+        if (!engine) {
+          return callback?.({ error: `Color room ${roomCode} does not exist.` });
+        }
+
+        const player: ColorMatchPlayer = {
+          id: socket.id,
+          name: playerName,
+          avatarId,
+          isHost: false,
+          isReady: false,
+          score: 0,
+          currentGuess: null,
+          hasSubmitted: false,
+          isConnected: true,
+        };
+
+        const added = engine.addPlayer(player, asSpectator);
+        if (!added) {
+          return callback?.({ error: 'Cannot join room. Room may be full or match already in progress.' });
+        }
+
+        socket.join(roomCode);
+
+        callback?.({
+          roomCode,
+          playerId: socket.id,
+          state: engine.getSnapshot(),
+        });
+      } catch (err: unknown) {
+        callback?.({ error: err instanceof Error ? err.message : 'Failed to join color room' });
+      }
+    });
+
+    socket.on('color_toggle_ready', ({ roomCode }, callback) => {
+      const engine = colorRooms.get(roomCode);
+      if (engine) {
+        engine.toggleReady(socket.id);
+        callback?.({ success: true, state: engine.getSnapshot() });
+      }
+    });
+
+    socket.on('color_update_settings', ({ roomCode, settings }, callback) => {
+      const engine = colorRooms.get(roomCode);
+      if (engine) {
+        const ok = engine.updateSettings(socket.id, settings);
+        callback?.({ success: ok, state: engine.getSnapshot() });
+      }
+    });
+
+    socket.on('color_start_game', ({ roomCode }, callback) => {
+      const engine = colorRooms.get(roomCode);
+      if (engine) {
+        const ok = engine.startGame(socket.id);
+        callback?.({ success: ok, state: engine.getSnapshot() });
+      }
+    });
+
+    socket.on('color_submit_guess', (data, callback) => {
+      try {
+        const parsed = submitColorGuessSchema.safeParse(data);
+        if (!parsed.success) {
+          return callback?.({ error: parsed.error.issues[0]?.message || 'Invalid parameters' });
+        }
+        const { roomCode, guess } = parsed.data;
+        const engine = colorRooms.get(roomCode);
+        if (!engine) {
+          return callback?.({ error: 'Room not found' });
+        }
+        const ok = engine.submitGuess(socket.id, guess);
+        callback?.({ success: ok });
+      } catch (err: unknown) {
+        callback?.({ error: err instanceof Error ? err.message : 'Failed to submit guess' });
+      }
+    });
+
+    socket.on('color_leave_room', ({ roomCode }) => {
+      socket.leave(roomCode);
+      const engine = colorRooms.get(roomCode);
+      if (engine) {
+        engine.removePlayer(socket.id);
+        if (engine.state.players.length === 0) {
+          engine.cleanTimers();
+          colorRooms.delete(roomCode);
+        }
+      }
+    });
+
     socket.on('disconnect', () => {
       // Clean from matchmaking queue
       if (matchmakingQueue.has(socket.id)) {
@@ -402,7 +556,7 @@ async function start() {
         broadcastQueueCounts();
       }
 
-      // Check all rooms
+      // Check all wordchain rooms
       for (const [code, engine] of rooms.entries()) {
         const isPlayer = engine.state.players.some(p => p.id === socket.id);
         const isSpec = engine.state.spectators.includes(socket.id);
@@ -411,6 +565,19 @@ async function start() {
           if (engine.state.players.length === 0) {
             engine.cleanTimers();
             rooms.delete(code);
+          }
+        }
+      }
+
+      // Check all color rooms
+      for (const [code, engine] of colorRooms.entries()) {
+        const isPlayer = engine.state.players.some(p => p.id === socket.id);
+        const isSpec = engine.state.spectators.includes(socket.id);
+        if (isPlayer || isSpec) {
+          engine.removePlayer(socket.id);
+          if (engine.state.players.length === 0) {
+            engine.cleanTimers();
+            colorRooms.delete(code);
           }
         }
       }

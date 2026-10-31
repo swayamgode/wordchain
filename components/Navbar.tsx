@@ -50,6 +50,26 @@ export const Navbar: React.FC = () => {
 
       {/* Nav Actions */}
       <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+        {/* Game Switcher Tabs */}
+        <div className="flex items-center gap-1 bg-white p-0.5 sm:p-1 border-2 border-[#111111] rounded-full shadow-[2px_2px_0px_#111111]">
+          <Link
+            href="/"
+            onClick={() => soundManager.playClick()}
+            className="px-2 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-wider hover:bg-neutral-100 transition-colors flex items-center gap-1 text-[#111111]"
+          >
+            <span>🔤</span>
+            <span className="hidden sm:inline">WordChain</span>
+          </Link>
+          <Link
+            href="/color-clash"
+            onClick={() => soundManager.playClick()}
+            className="px-2 sm:px-3 py-1 bg-[#FFC928] border border-[#111111] rounded-full text-[11px] sm:text-xs font-black uppercase tracking-wider shadow-[1px_1px_0px_#111111] hover:bg-[#ffcf3e] transition-colors flex items-center gap-1 text-[#111111]"
+          >
+            <span>🎨</span>
+            <span>Color Clash</span>
+          </Link>
+        </div>
+
         {/* Install PWA Button */}
         <InstallPwaPrompt />
 

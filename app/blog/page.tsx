@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'rgb-color-match-game-guide',
+    title: 'RGB Color Matching Game: How to Play, Hex Codes & Strategy Guide (2026)',
+    excerpt: 'Master the multiplayer RGB color matching game! Learn how Red, Green, and Blue sliders work, color mixing formulas, Euclidean distance scoring, and tricks to win Color Clash.',
+    date: '2026-03-16',
+    readTime: '7 min read',
+    category: 'New Game Guide',
+    featured: true,
+  },
+  {
     slug: 'word-chain-game-online-free',
     title: 'Word Chain Game Online — Play Free Multiplayer WordChain (2026)',
     excerpt: 'Play the official WordChain game online for free! Real-time multiplayer word chain battles with friends, AI practice bots, and customizable rules. No download needed.',

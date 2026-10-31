@@ -145,6 +145,84 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* MULTIPLE GAMES SHOWCASE SECTION */}
+        <section className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="text-xs font-black uppercase tracking-wider bg-[#FFC928] px-2.5 py-0.5 rounded-full border border-[#111111]">
+                Game Arcade
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#111111] tracking-tight mt-1">
+                Featured Multiplayer Games
+              </h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Game 1: WordChain */}
+            <div className="doodle-card-yellow p-5 sm:p-6 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-2xl">🔤</span>
+                  <span className="text-[10px] font-black uppercase bg-white border border-[#111111] px-2 py-0.5 rounded">
+                    Word Battler
+                  </span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-[#111111]">WordChain</h3>
+                <p className="text-xs font-bold text-[#333333] mt-1 leading-relaxed">
+                  Chain words by their last letter before the countdown buzzer hits zero. Competitive multiplayer word relay with doodle monster avatars!
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 pt-2">
+                <Link
+                  href="/matchmaking"
+                  className="flex-1 py-2.5 bg-white border-2 border-[#111111] rounded-xl font-black text-xs uppercase tracking-wider text-center shadow-[2px_2px_0px_#111111] hover:bg-neutral-50"
+                >
+                  Quick Match
+                </Link>
+                <Link
+                  href="/create"
+                  className="flex-1 py-2.5 bg-[#111111] text-white border-2 border-[#111111] rounded-xl font-black text-xs uppercase tracking-wider text-center shadow-[2px_2px_0px_#FFC928] hover:bg-neutral-800"
+                >
+                  Create Room
+                </Link>
+              </div>
+            </div>
+
+            {/* Game 2: Color Clash */}
+            <div className="doodle-card p-5 sm:p-6 bg-white flex flex-col justify-between space-y-4 border-2 border-[#111111]">
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-2xl">🎨</span>
+                  <span className="text-[10px] font-black uppercase bg-[#FFC928] border border-[#111111] px-2 py-0.5 rounded">
+                    NEW GAME
+                  </span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-[#111111]">Color Clash</h3>
+                <p className="text-xs font-bold text-[#666666] mt-1 leading-relaxed">
+                  All players get the same secret color! Slide Red, Green, and Blue sliders to match the exact hue. Closest match wins the round!
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 pt-2">
+                <Link
+                  href="/color-clash/practice"
+                  className="flex-1 py-2.5 bg-neutral-100 border-2 border-[#111111] rounded-xl font-black text-xs uppercase tracking-wider text-center shadow-[2px_2px_0px_#111111] hover:bg-neutral-200"
+                >
+                  Solo Practice
+                </Link>
+                <Link
+                  href="/color-clash"
+                  className="flex-1 py-2.5 bg-[#FFC928] text-[#111111] border-2 border-[#111111] rounded-xl font-black text-xs uppercase tracking-wider text-center shadow-[2px_2px_0px_#111111] hover:bg-[#ffcf3e]"
+                >
+                  Play Color Clash →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* GAME MODES GRID */}
         <section className="space-y-4">
           <div className="flex items-center justify-between">
@@ -517,12 +595,12 @@ export default function LandingPage() {
           </div>
 
           <div>
-            <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Game Modes</h4>
+            <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Arcade Games</h4>
             <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
-              <li><Link href="/matchmaking" className="hover:text-[#111111]">Quick Play Matchmaking</Link></li>
-              <li><Link href="/create" className="hover:text-[#111111]">Create Custom Room</Link></li>
-              <li><Link href="/practice" className="hover:text-[#111111]">Solo vs AI Bot</Link></li>
-              <li><Link href="/local" className="hover:text-[#111111]">Local Pass & Play</Link></li>
+              <li><Link href="/" className="hover:text-[#111111]">WordChain (Word Relay)</Link></li>
+              <li><Link href="/color-clash" className="hover:text-[#111111]">Color Clash (RGB Matcher)</Link></li>
+              <li><Link href="/color-clash/practice" className="hover:text-[#111111]">Color Clash AI Practice</Link></li>
+              <li><Link href="/color-clash/local" className="hover:text-[#111111]">Color Clash 2-Player Local</Link></li>
             </ul>
           </div>
 

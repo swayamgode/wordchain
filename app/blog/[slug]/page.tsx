@@ -12,6 +12,102 @@ type BlogContent = {
 };
 
 const posts: Record<string, BlogContent> = {
+  'rgb-color-match-game-guide': {
+    title: 'RGB Color Matching Game: How to Play, Hex Codes & Strategy Guide (2026)',
+    description: 'Master the multiplayer RGB color matching game! Learn how Red, Green, and Blue sliders work, color mixing formulas, Euclidean distance scoring, and top tricks to win Color Clash.',
+    keywords: [
+      'rgb color matching game',
+      'color matching game online',
+      'rgb game',
+      'color clash',
+      'color slider game',
+      'how to play color matching game',
+      'rgb color game multiplayer',
+      'guess the color rgb',
+      'hex color guessing game',
+    ],
+    date: '2026-03-16',
+    readTime: '7 min read',
+    faq: [
+      {
+        question: 'How do you play the RGB color matching game?',
+        answer: 'All players look at the same secret color swatch. You adjust the Red, Green, and Blue sliders (from 0 to 255) to reproduce the color. When time runs out, the player whose mix has the lowest Euclidean color distance wins the round.',
+      },
+      {
+        question: 'What is Euclidean distance in RGB color matching?',
+        answer: 'Euclidean distance measures the 3D distance between target (Rt, Gt, Bt) and your guess (Rg, Gg, Bg) using the Pythagorean formula: sqrt((Rt-Rg)^2 + (Gt-Gg)^2 + (Bt-Bg)^2). Lower distance means higher accuracy.',
+      },
+      {
+        question: 'Can you play Color Clash with friends online?',
+        answer: 'Yes! Create a free room in Color Clash, share your 6-letter room code, and battle in real-time round eliminations. No download or registration needed.',
+      },
+    ],
+    content: `
+## Master the RGB Color Matching Game: Strategy & Color Theory
+
+Looking for the most thrilling test of color perception on the web? Welcome to **Color Clash** — the real-time multiplayer RGB color matching game.
+
+Whether you are a graphic designer, digital artist, web developer, or casual gamer, matching an arbitrary color swatch using only **Red, Green, and Blue sliders** is both an intuitive art and a mathematical challenge.
+
+---
+
+### How Color Clash Works
+
+1. **Synchronized Target**: At the start of each round, an identical target color swatch appears on all players' screens.
+2. **Three Sliders (0 - 255)**:
+   - **R (Red)**: Adds red light intensity.
+   - **G (Green)**: Adds green light intensity.
+   - **B (Blue)**: Adds blue light intensity.
+3. **Round Clock**: You have 15 to 30 seconds to adjust your sliders and lock in your mix.
+4. **Euclidean Accuracy Evaluation**: The server evaluates every player's submitted RGB coordinates against the target color.
+5. **Round Winner**: The player with the highest accuracy percentage (closest distance) takes 1st place!
+
+---
+
+### The Mathematical Formula: How Accuracy Is Scored
+
+In computer graphics, 24-bit RGB colors are points in a 3-dimensional cube ranging from $(0, 0, 0)$ to $(255, 255, 255)$.
+
+The distance between the **target color** $(R_t, G_t, B_t)$ and your **guess** $(R_g, G_g, B_g)$ is computed with the 3D Euclidean distance formula:
+
+\`\`\`
+Distance = sqrt((Rt - Rg)^2 + (Gt - Gg)^2 + (Bt - Bg)^2)
+\`\`\`
+
+The maximum possible distance is between Pure Black $(0,0,0)$ and Pure White $(255,255,255)$, which equals roughly **441.67**.
+
+Your **Match Percentage** is then:
+\`\`\`
+Accuracy % = max(0, (1 - Distance / 441.67) * 100)
+\`\`\`
+
+Scoring **95%+ accuracy** earns you the **Color Wizard** bonus!
+
+---
+
+### Top 5 RGB Mixing Cheats for Higher Accuracy
+
+1. **Additive Color Mixing Rule**:
+   - **Red + Green = Yellow** (e.g., \`rgb(255, 255, 0)\`)
+   - **Green + Blue = Cyan** (e.g., \`rgb(0, 255, 255)\`)
+   - **Red + Blue = Magenta / Pink** (e.g., \`rgb(255, 0, 255)\`)
+2. **Brightness vs Saturation**:
+   - High R, G, and B together produces bright pastels or white.
+   - Low R, G, and B together produces dark or muddy shades.
+3. **Neutral Greys**:
+   - When R, G, and B are roughly equal, the result is always neutral grey or brown.
+4. **Nudge Buttons**:
+   - Use the \`[-10]\` and \`[+10]\` stepper buttons in Color Clash for swift broad adjustments, then tap \`[-1]\` / \`[+1]\` for fine-tuning.
+5. **Lock In Early**:
+   - If you hit a 97%+ match, lock in! Hesitating in the final seconds often leads to accidental slider overshoots.
+
+---
+
+### Ready to Test Your Color Perception?
+
+[Play Color Clash Free Online Right Now →](/color-clash)
+    `,
+  },
   'what-is-word-chain-game': {
     title: 'What Is a Word Chain Game? Complete Guide for Beginners',
     description: 'Learn everything about word chain games — rules, history, variations like Shiritori, and how to play online with friends for free.',

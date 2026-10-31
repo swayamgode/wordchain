@@ -101,3 +101,50 @@ export const matchmakingQueueSchema = z.object({
   avatarId: z.string().trim().min(1).max(30),
   preset: z.enum(['classic', 'quickfire', 'brain_battle', 'chill']),
 });
+
+// --- COLOR CLASH SCHEMAS ---
+export const colorRoundTimerSchema = z.union([
+  z.literal(10),
+  z.literal(15),
+  z.literal(20),
+  z.literal(30),
+  z.literal(45),
+  z.literal(60),
+]);
+
+export const colorTotalRoundsSchema = z.union([
+  z.literal(3),
+  z.literal(5),
+  z.literal(7),
+  z.literal(10),
+]);
+
+export const colorSettingsSchema = z.object({
+  roundTimeLimit: colorRoundTimerSchema.default(20),
+  totalRounds: colorTotalRoundsSchema.default(5),
+  playerCount: playerCountSchema.default(6),
+  isPublic: z.boolean().default(true),
+  allowSpectators: z.boolean().default(true),
+});
+
+export const createColorRoomSchema = z.object({
+  playerName: z.string().trim().min(1).max(20),
+  avatarId: z.string().trim().min(1).max(30),
+  settings: colorSettingsSchema.optional(),
+});
+
+export const joinColorRoomSchema = z.object({
+  roomCode: z.string().trim().toUpperCase().min(4).max(8),
+  playerName: z.string().trim().min(1).max(20),
+  avatarId: z.string().trim().min(1).max(30),
+  asSpectator: z.boolean().optional(),
+});
+
+export const submitColorGuessSchema = z.object({
+  roomCode: z.string().trim().toUpperCase().min(4).max(8),
+  guess: z.object({
+    r: z.number().min(0).max(255),
+    g: z.number().min(0).max(255),
+    b: z.number().min(0).max(255),
+  }),
+});
