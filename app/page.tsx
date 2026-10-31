@@ -18,6 +18,7 @@ import {
   Gamepad2,
 } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/Footer';
 import { MonsterAvatar } from '../components/doodles/MonsterAvatars';
 import { TopoDoodlePattern, DoodleCrowdBanner } from '../components/doodles/DoodleBackground';
 import { soundManager } from '../lib/audio/sounds';
@@ -359,59 +360,7 @@ export default function LandingPage() {
         </div>
       </main>
 
-      {/* ───── FOOTER ───── */}
-      <footer className="w-full border-t-2 border-[#111111] bg-white py-8 sm:py-10 px-4 select-none">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mb-6">
-          <div className="col-span-2 sm:col-span-1">
-            <div className="flex items-center gap-1.5 mb-2">
-              <span className="text-base sm:text-lg font-black text-[#111]">WORD</span>
-              <span className="text-base sm:text-lg font-black bg-[#FFC928] px-1.5 rounded border border-[#111]">CHAIN</span>
-            </div>
-            <p className="text-[10px] sm:text-xs font-bold text-[#666] leading-relaxed">
-              Free real-time multiplayer game arcade. Play word battles, color duels & more.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#111] mb-2 sm:mb-3">Games</h4>
-            <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs font-bold text-[#555]">
-              <li><Link href="/matchmaking" className="hover:text-[#111]">WordChain</Link></li>
-              <li><Link href="/color-clash" className="hover:text-[#111]">Color Clash</Link></li>
-              <li><Link href="/practice" className="hover:text-[#111]">Solo Practice</Link></li>
-              <li><Link href="/local" className="hover:text-[#111]">Pass &amp; Play</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#111] mb-2 sm:mb-3">Guides</h4>
-            <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs font-bold text-[#555]">
-              <li><Link href="/blog/word-chain-game-online-free" className="hover:text-[#111]">Play Online Free</Link></li>
-              <li><Link href="/blog/word-chain-words-a-to-z-dictionary" className="hover:text-[#111]">A-Z Dictionary</Link></li>
-              <li><Link href="/blog/rgb-color-match-game-guide" className="hover:text-[#111]">Color Clash Guide</Link></li>
-              <li><Link href="/blog" className="hover:text-[#111]">All Articles →</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#111] mb-2 sm:mb-3">More</h4>
-            <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs font-bold text-[#555]">
-              <li><Link href="/blog/what-is-word-chain-game" className="hover:text-[#111]">What Is Word Chain?</Link></li>
-              <li><Link href="/blog/shiritori-word-chain-generator-solver" className="hover:text-[#111]">Solver Tips</Link></li>
-              <li><Link href="/blog/games-to-play-when-bored" className="hover:text-[#111]">Games When Bored</Link></li>
-              <li><Link href="/create" className="hover:text-[#111]">Create Room</Link></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="max-w-5xl mx-auto pt-4 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-xs font-bold text-[#777] gap-2">
-          <p>© 2026 WordChain. Free online multiplayer game arcade.</p>
-          <div className="flex gap-4">
-            <Link href="/blog" className="hover:underline">Blog</Link>
-            <Link href="/create" className="hover:underline">Play Now</Link>
-            <Link href="/sitemap.xml" className="hover:underline">Sitemap</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

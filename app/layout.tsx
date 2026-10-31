@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/next';
+import { AdSenseScript } from '../components/ads/AdSenseScript';
+import { CookieConsentBanner } from '../components/CookieConsentBanner';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -214,6 +216,11 @@ export default function RootLayout({
         <link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3027613620365055"
+          crossOrigin="anonymous"
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
@@ -231,7 +238,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col selection:bg-[#FFC928] selection:text-[#111111]">
+        <AdSenseScript />
         {children}
+        <CookieConsentBanner />
         <Analytics />
       </body>
     </html>

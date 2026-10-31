@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Navbar } from '../../../components/Navbar';
+import { Footer } from '../../../components/Footer';
+import { AdContainer } from '../../../components/ads/AdContainer';
+import { AdUnit } from '../../../components/ads/AdUnit';
 
 type BlogContent = {
   title: string;
@@ -1126,6 +1130,58 @@ If you enjoy fast-paced multiplayer competition, timer adrenaline, and playing w
 [Play WordChain Online Free →](/create)
     `,
   },
+  'benefits-of-playing-word-games': {
+    title: 'The Cognitive and Mental Benefits of Playing Word Games Daily',
+    description: 'Discover how regular word gaming boosts working memory, lexical recall speed, neuroplasticity, and stress reduction for players of all ages.',
+    keywords: [
+      'benefits of playing word games',
+      'brain games cognitive benefits',
+      'does wordle improve vocabulary',
+      'memory games for adults',
+      'word games mental sharpness',
+      'neuroplasticity word puzzles',
+    ],
+    date: '2026-03-18',
+    readTime: '7 min read',
+    faq: [
+      {
+        question: 'Do word games actually improve brain function?',
+        answer: 'Yes. Peer-reviewed neuropsychological studies indicate that lexical retrieval exercises (such as anagrams, word chaining, and crosswords) strengthen semantic memory networks and improve cognitive flexibility.',
+      },
+      {
+        question: 'How long should you play word games each day for optimal benefit?',
+        answer: 'Practicing for 15 to 20 minutes daily provides meaningful mental stimulation without causing cognitive fatigue.',
+      },
+    ],
+    content: `
+## The Science Behind Word Games and Brain Health
+
+Word games are far more than idle diversions. From crossword puzzles in morning newspapers to high-speed digital multiplayer arenas like **WordChain**, engaging in wordplay stimulates several distinct cognitive subsystems simultaneously.
+
+### 1. Accelerating Lexical Retrieval Speed
+Have you ever experienced the "tip-of-the-tongue" phenomenon, where you know a concept but cannot immediately summon the exact word? Cognitive psychologists refer to this as a breakdown in **lexical retrieval**.
+
+When playing fast-paced word relay games under time constraints (e.g. 15-second turns), your brain is forced to rapidly search semantic pathways. Regular training strengthens these neural circuits, drastically decreasing the time required to recall vocabulary during spontaneous conversation.
+
+### 2. Expanding Working Memory Capacity
+Word games require holding multiple linguistic constraints in working memory simultaneously:
+- Remembering the last letter of the opponent's submission.
+- Filtering out words that have already been played during the match.
+- Evaluating word length requirements and spelling accuracy.
+
+This multi-factor evaluation engages the **dorsolateral prefrontal cortex**, the brain region responsible for executive planning and working memory maintenance.
+
+### 3. Neuroplasticity and Cognitive Reserve
+Linguistic stimulation encourages the development of new synaptic connections (synaptogenesis), contributing to what researchers call **cognitive reserve**. People with higher cognitive reserve tend to maintain mental agility and sharpness longer into their senior years.
+
+### Summary: Daily Brain Workout Routine
+- Spend 5 minutes solving an anagram or crossword puzzle.
+- Play 2-3 rounds of [WordChain Solo Practice](/practice) against an AI bot.
+- Challenge friends or coworkers to a friendly multiplayer word duel.
+
+[Start Your Daily Vocabulary Workout on WordChain →](/practice)
+    `,
+  },
 };
 
 type Params = Promise<{ slug: string }>;
@@ -1227,7 +1283,9 @@ export default async function BlogPost({ params }: { params: Params }) {
     : null;
 
   return (
-    <main className="min-h-screen" style={{ background: '#FAF7EE' }}>
+    <div className="relative min-h-screen flex flex-col justify-between overflow-x-hidden bg-[#FAF7EE]">
+      <Navbar />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -1243,7 +1301,7 @@ export default async function BlogPost({ params }: { params: Params }) {
         />
       )}
 
-      <article className="max-w-3xl mx-auto px-4 pt-20 pb-24">
+      <article className="max-w-3xl mx-auto px-4 pt-6 sm:pt-10 pb-20 flex-1">
         {/* Breadcrumb nav */}
         <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-xs font-bold text-[#666]">
           <Link href="/" className="hover:underline">Home</Link>
@@ -1253,7 +1311,7 @@ export default async function BlogPost({ params }: { params: Params }) {
           <span className="text-[#111] truncate max-w-[200px] sm:max-w-md">{post.title}</span>
         </nav>
 
-        <header className="mb-10">
+        <header className="mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 tracking-tight leading-tight" style={{ color: '#111' }}>
             {post.title}
           </h1>
@@ -1268,6 +1326,11 @@ export default async function BlogPost({ params }: { params: Params }) {
           </div>
         </header>
 
+        {/* Ad Placement: Top of Content */}
+        <AdContainer minHeight="100px">
+          <AdUnit slot="article-top-content" />
+        </AdContainer>
+
         <div
           className="prose prose-lg max-w-none text-[#222]"
           style={{ lineHeight: '1.8' }}
@@ -1275,6 +1338,11 @@ export default async function BlogPost({ params }: { params: Params }) {
             __html: simpleMarkdown(post.content),
           }}
         />
+
+        {/* Ad Placement: Mid Content */}
+        <AdContainer minHeight="120px">
+          <AdUnit slot="article-mid-content" />
+        </AdContainer>
 
         {/* Interactive FAQ Section */}
         {post.faq && post.faq.length > 0 && (
@@ -1320,8 +1388,15 @@ export default async function BlogPost({ params }: { params: Params }) {
             </Link>
           </div>
         </div>
+
+        {/* Ad Placement: Bottom of Article */}
+        <AdContainer minHeight="100px">
+          <AdUnit slot="article-bottom-content" />
+        </AdContainer>
       </article>
-    </main>
+
+      <Footer />
+    </div>
   );
 }
 

@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Navbar } from '../../components/Navbar';
+import { Footer } from '../../components/Footer';
+import { AdContainer } from '../../components/ads/AdContainer';
+import { AdUnit } from '../../components/ads/AdUnit';
 
 export const metadata: Metadata = {
   title: 'Word Game Blog — Guides, Trap Words & Strategies | WordChain',
@@ -20,6 +24,15 @@ export const metadata: Metadata = {
 };
 
 const blogPosts = [
+  {
+    slug: 'benefits-of-playing-word-games',
+    title: 'The Cognitive and Mental Benefits of Playing Word Games Daily',
+    excerpt: 'Discover how daily word gaming boosts working memory, lexical recall speed, neuroplasticity, and mental agility for players of all ages.',
+    date: '2026-03-18',
+    readTime: '7 min read',
+    category: 'Brain Health',
+    featured: true,
+  },
   {
     slug: 'rgb-color-match-game-guide',
     title: 'RGB Color Matching Game: How to Play, Hex Codes & Strategy Guide (2026)',
@@ -221,18 +234,21 @@ export default function BlogPage() {
   };
 
   return (
-    <main className="min-h-screen" style={{ background: '#FAF7EE' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
-      />
+    <div className="relative min-h-screen flex flex-col justify-between overflow-x-hidden bg-[#FAF7EE]">
+      <Navbar />
 
-      {/* Hero */}
-      <section className="pt-20 pb-12 px-4 text-center">
+      <main className="flex-1 pb-16">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+        />
+
+        {/* Hero */}
+        <section className="pt-8 sm:pt-12 pb-8 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <Link
             href="/"
@@ -326,6 +342,16 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-    </main>
+
+      {/* Ad Placement: Bottom of Blog Directory */}
+      <div className="max-w-6xl mx-auto px-4 pb-8">
+        <AdContainer minHeight="100px">
+          <AdUnit slot="blog-index-bottom" />
+        </AdContainer>
+      </div>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
