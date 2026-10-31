@@ -6,21 +6,20 @@ import { useRouter } from 'next/navigation';
 import {
   Zap,
   Users,
-  Bot,
-  Play,
   ArrowRight,
   Sparkles,
-  Trophy,
-  Coffee,
-  Brain,
-  Sliders,
-  Check,
   Search,
+  Palette,
+  Type,
+  Trophy,
+  Timer,
+  ChevronDown,
+  Bot,
+  Gamepad2,
 } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
-import { MonsterAvatar, MONSTER_LIST } from '../components/doodles/MonsterAvatars';
+import { MonsterAvatar } from '../components/doodles/MonsterAvatars';
 import { TopoDoodlePattern, DoodleCrowdBanner } from '../components/doodles/DoodleBackground';
-import { PRESETS } from '../lib/constants/presets';
 import { soundManager } from '../lib/audio/sounds';
 import { getLocalGuestProfile } from '../lib/supabase/client';
 
@@ -28,6 +27,7 @@ export default function LandingPage() {
   const router = useRouter();
   const [roomCodeInput, setRoomCodeInput] = useState('');
   const [profile, setProfile] = useState<{ displayName: string; avatarId: string } | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     setProfile(getLocalGuestProfile());
@@ -47,587 +47,364 @@ export default function LandingPage() {
       <TopoDoodlePattern opacity={0.07} />
       <Navbar />
 
-      <main className="relative z-10 w-full max-w-6xl mx-auto px-3.5 sm:px-4 py-4 sm:py-10 flex-1 flex flex-col gap-8 sm:gap-14">
-        {/* HERO SECTION */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-          {/* Left Hero Card */}
-          <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5">
-            <div className="inline-flex items-center gap-2 bg-[#FFC928] text-[11px] sm:text-xs font-black uppercase px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border-2 border-[#111111] shadow-[2px_2px_0px_#111111] w-fit">
-              <Sparkles size={13} className="shrink-0" />
-              <span>Real-time Multiplayer Word Battler</span>
-            </div>
+      <main className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-12 flex-1 flex flex-col gap-10 sm:gap-16">
 
-            <h1 className="text-3xl sm:text-6xl font-black text-[#111111] tracking-tight leading-[1.08]">
-              WordChain <br />
-              <span className="bg-[#FFC928] px-2.5 sm:px-3 py-0.5 rounded-xl sm:rounded-2xl border-[2px] sm:border-[3px] border-[#111111] shadow-[2.5px_2.5px_0px_#111111] sm:shadow-[4px_4px_0px_#111111] inline-block mt-1">
-                The Word Chain Game.
-              </span>
-            </h1>
-
-            <p className="text-xs sm:text-lg font-bold text-[#555555] max-w-xl leading-relaxed">
-              Play WordChain free online — connect words by their last letter before time runs out.
-              Challenge friends with custom lengths, rapid turn limits, and elimination rules.
-            </p>
-
-            {/* Quick action buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 pt-1 sm:pt-2">
-              <Link
-                href="/matchmaking"
-                onClick={() => soundManager.playClick()}
-                className="doodle-btn-yellow py-3 sm:py-3.5 px-6 sm:px-7 text-sm sm:text-base group justify-center text-center shrink-0"
-              >
-                <Zap size={18} className="fill-[#111111] shrink-0" />
-                <span>Play Quick Match</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-
-              <Link
-                href="/create"
-                onClick={() => soundManager.playClick()}
-                className="doodle-btn py-3 sm:py-3.5 px-5 sm:px-6 text-sm sm:text-base group justify-center text-center shrink-0"
-              >
-                <Users size={18} className="shrink-0" />
-                <span>Create Match</span>
-              </Link>
-            </div>
-
-            {/* Direct Join by Room Code */}
-            <form onSubmit={handleJoinByCode} className="flex items-center gap-2 w-full max-w-sm pt-1">
-              <input
-                type="text"
-                maxLength={6}
-                value={roomCodeInput}
-                onChange={e => setRoomCodeInput(e.target.value.toUpperCase())}
-                placeholder="ENTER 6-CHAR CODE"
-                className="flex-1 min-w-0 bg-white border-2 border-[#111111] rounded-full px-3.5 sm:px-4 py-2 font-mono text-xs sm:text-sm font-black tracking-widest text-[#111111] shadow-[2px_2px_0px_#111111] focus:outline-none uppercase"
-              />
-              <button
-                type="submit"
-                disabled={roomCodeInput.trim().length !== 6}
-                className="doodle-btn py-2 px-3.5 sm:px-4 text-xs shrink-0 disabled:opacity-40"
-              >
-                <Search size={14} />
-                <span>Join</span>
-              </button>
-            </form>
+        {/* ───── HERO ───── */}
+        <section className="text-center flex flex-col items-center gap-5 sm:gap-6">
+          <div className="inline-flex items-center gap-2 bg-[#FFC928] text-[11px] sm:text-xs font-black uppercase px-3.5 py-1.5 rounded-full border-2 border-[#111111] shadow-[2px_2px_0px_#111111]">
+            <Sparkles size={13} className="shrink-0" />
+            <span>Free Multiplayer Game Arcade</span>
           </div>
 
-          {/* Right Featured Hero Card (Inspired by reference mockup central yellow card) */}
-          <div className="lg:col-span-5 flex justify-center w-full">
-            <div className="w-full max-w-sm doodle-card-yellow p-5 sm:p-6 relative overflow-hidden flex flex-col justify-between min-h-[320px] sm:min-h-[380px]">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-[#111111] bg-white px-2.5 sm:px-3 py-1 rounded-full border-2 border-[#111111] shadow-[1.5px_1.5px_0px_#111111] sm:shadow-[2px_2px_0px_#111111]">
-                  Featured Preset
-                </span>
-                <span className="text-xs font-black font-mono">10s TURNS</span>
-              </div>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-[#111111] tracking-tight leading-[1.05]">
+            Play Games,{' '}
+            <span className="bg-[#FFC928] px-3 py-0.5 rounded-2xl border-[3px] border-[#111111] shadow-[4px_4px_0px_#111111] inline-block">
+              Beat Friends.
+            </span>
+          </h1>
 
-              {/* Monster Mascot Illustration */}
-              <div className="my-auto text-center py-3 sm:py-4 relative">
-                <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto bg-white border-[2.5px] sm:border-[3px] border-[#111111] rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-[3px_3px_0px_#111111] sm:shadow-[4px_4px_0px_#111111] overflow-hidden animate-doodle-bounce">
-                  <MonsterAvatar id="monty" size={85} mood="happy" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-black text-[#111111] mt-2.5 sm:mt-3">CLASSIC CHAIN</h3>
-                <p className="text-xs font-bold text-[#333333] max-w-[220px] mx-auto mt-1">
-                  Any length words, 3 lives, last letter chaining.
-                </p>
-              </div>
+          <p className="text-sm sm:text-lg font-bold text-[#555555] max-w-xl leading-relaxed">
+            Word battles, color duels &amp; more — real-time multiplayer games you can play instantly in your browser. No downloads, no accounts.
+          </p>
 
-              <Link
-                href="/create?preset=classic"
-                onClick={() => soundManager.playClick()}
-                className="w-full doodle-btn py-2.5 sm:py-3 text-xs sm:text-sm justify-between group"
-              >
-                <span>Launch Classic Room</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+          {/* Hero CTAs */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-md">
+            <Link
+              href="/matchmaking"
+              onClick={() => soundManager.playClick()}
+              className="doodle-btn-yellow py-3.5 px-7 text-sm sm:text-base group justify-center text-center flex-1"
+            >
+              <Zap size={18} className="fill-[#111111] shrink-0" />
+              <span>Quick Play</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+
+            <Link
+              href="/create"
+              onClick={() => soundManager.playClick()}
+              className="doodle-btn py-3.5 px-6 text-sm sm:text-base group justify-center text-center flex-1"
+            >
+              <Users size={18} className="shrink-0" />
+              <span>Create Room</span>
+            </Link>
+          </div>
+
+          {/* Room Code Join */}
+          <form onSubmit={handleJoinByCode} className="flex items-center gap-2 w-full max-w-xs">
+            <input
+              type="text"
+              maxLength={6}
+              value={roomCodeInput}
+              onChange={e => setRoomCodeInput(e.target.value.toUpperCase())}
+              placeholder="ROOM CODE"
+              className="flex-1 min-w-0 bg-white border-2 border-[#111111] rounded-full px-4 py-2 font-mono text-xs font-black tracking-widest text-[#111111] shadow-[2px_2px_0px_#111111] focus:outline-none uppercase text-center"
+            />
+            <button
+              type="submit"
+              disabled={roomCodeInput.trim().length !== 6}
+              className="doodle-btn py-2 px-4 text-xs shrink-0 disabled:opacity-40"
+            >
+              <Search size={14} />
+              <span>Join</span>
+            </button>
+          </form>
+
+          {/* Bouncing mascot */}
+          <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto bg-white border-[3px] border-[#111111] rounded-3xl flex items-center justify-center shadow-[4px_4px_0px_#111111] overflow-hidden animate-doodle-bounce">
+            <MonsterAvatar id="monty" size={64} mood="happy" />
           </div>
         </section>
 
-        {/* MULTIPLE GAMES SHOWCASE SECTION */}
-        <section className="space-y-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <span className="text-xs font-black uppercase tracking-wider bg-[#FFC928] px-2.5 py-0.5 rounded-full border border-[#111111]">
-                Game Arcade
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#111111] tracking-tight mt-1">
-                Featured Multiplayer Games
-              </h2>
-            </div>
+        {/* ───── FEATURED GAMES ───── */}
+        <section className="space-y-5">
+          <div className="text-center">
+            <span className="text-xs font-black uppercase tracking-wider bg-[#FFC928] px-3 py-1 rounded-full border border-[#111111]">
+              Game Arcade
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-black text-[#111111] tracking-tight mt-2">
+              Pick Your Battle
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Game 1: WordChain */}
-            <div className="doodle-card-yellow p-5 sm:p-6 flex flex-col justify-between space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            {/* WordChain Card */}
+            <div className="doodle-card-yellow p-5 sm:p-7 flex flex-col justify-between min-h-[280px] sm:min-h-[320px] relative overflow-hidden">
               <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-2xl">🔤</span>
-                  <span className="text-[10px] font-black uppercase bg-white border border-[#111111] px-2 py-0.5 rounded">
-                    Word Battler
-                  </span>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white border-2 border-[#111111] rounded-xl flex items-center justify-center shadow-[2px_2px_0px_#111111]">
+                    <Type size={22} className="text-[#111111]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-black text-[#111111] leading-tight">WordChain</h3>
+                    <span className="text-[10px] font-black uppercase tracking-wider text-[#555]">Word Relay Battle</span>
+                  </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black text-[#111111]">WordChain</h3>
-                <p className="text-xs font-bold text-[#333333] mt-1 leading-relaxed">
-                  Chain words by their last letter before the countdown buzzer hits zero. Competitive multiplayer word relay with doodle monster avatars!
+                <p className="text-xs sm:text-sm font-bold text-[#333] leading-relaxed">
+                  Chain words by their last letter before time runs out. Trap opponents with killer letters like X, Z, Q!
                 </p>
+
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {[
+                    { icon: <Users size={11} />, label: '2-8 Players' },
+                    { icon: <Timer size={11} />, label: '10-30s Turns' },
+                    { icon: <Trophy size={11} />, label: 'Elimination' },
+                  ].map((tag, i) => (
+                    <span key={i} className="inline-flex items-center gap-1 text-[10px] font-black bg-white/70 border border-[#111]/20 px-2 py-0.5 rounded-full">
+                      {tag.icon} {tag.label}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              <div className="flex items-center gap-2 pt-2">
+              <div className="flex items-center gap-2 mt-4">
                 <Link
                   href="/matchmaking"
-                  className="flex-1 py-2.5 bg-white border-2 border-[#111111] rounded-xl font-black text-xs uppercase tracking-wider text-center shadow-[2px_2px_0px_#111111] hover:bg-neutral-50"
+                  onClick={() => soundManager.playClick()}
+                  className="flex-1 py-2.5 sm:py-3 bg-[#111111] text-white border-2 border-[#111111] rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider text-center shadow-[2px_2px_0px_#FFC928] hover:bg-neutral-800 transition-colors"
                 >
-                  Quick Match
+                  Play Now →
                 </Link>
                 <Link
-                  href="/create"
-                  className="flex-1 py-2.5 bg-[#111111] text-white border-2 border-[#111111] rounded-xl font-black text-xs uppercase tracking-wider text-center shadow-[2px_2px_0px_#FFC928] hover:bg-neutral-800"
+                  href="/practice"
+                  onClick={() => soundManager.playClick()}
+                  className="py-2.5 sm:py-3 px-4 bg-white border-2 border-[#111111] rounded-xl font-black text-xs uppercase text-center shadow-[2px_2px_0px_#111111] hover:bg-neutral-50 transition-colors"
                 >
-                  Create Room
+                  <Bot size={14} />
                 </Link>
               </div>
             </div>
 
-            {/* Game 2: Color Clash */}
-            <div className="doodle-card p-5 sm:p-6 bg-white flex flex-col justify-between space-y-4 border-2 border-[#111111]">
+            {/* Color Clash Card */}
+            <div className="doodle-card p-5 sm:p-7 flex flex-col justify-between min-h-[280px] sm:min-h-[320px] relative overflow-hidden bg-gradient-to-br from-white via-white to-red-50/40">
+              <div className="absolute top-3 right-3">
+                <span className="text-[10px] font-black uppercase bg-[#FFC928] border-2 border-[#111111] px-2.5 py-1 rounded-full shadow-[1px_1px_0px_#111]">
+                  NEW
+                </span>
+              </div>
               <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-2xl">🎨</span>
-                  <span className="text-[10px] font-black uppercase bg-[#FFC928] border border-[#111111] px-2 py-0.5 rounded">
-                    NEW GAME
-                  </span>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-red-400 via-green-400 to-blue-400 border-2 border-[#111111] rounded-xl flex items-center justify-center shadow-[2px_2px_0px_#111111]">
+                    <Palette size={22} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-black text-[#111111] leading-tight">Color Clash</h3>
+                    <span className="text-[10px] font-black uppercase tracking-wider text-[#555]">RGB Matching Duel</span>
+                  </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black text-[#111111]">Color Clash</h3>
-                <p className="text-xs font-bold text-[#666666] mt-1 leading-relaxed">
-                  All players get the same secret color! Slide Red, Green, and Blue sliders to match the exact hue. Closest match wins the round!
+                <p className="text-xs sm:text-sm font-bold text-[#555] leading-relaxed">
+                  All players see a secret target color. Slide R, G, B to match it — closest match wins the round!
                 </p>
+
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {[
+                    { icon: <Palette size={11} />, label: 'RGB Sliders' },
+                    { icon: <Gamepad2 size={11} />, label: 'Solo / Local / Online' },
+                    { icon: <Trophy size={11} />, label: '5 Rounds' },
+                  ].map((tag, i) => (
+                    <span key={i} className="inline-flex items-center gap-1 text-[10px] font-black bg-neutral-100 border border-neutral-200 px-2 py-0.5 rounded-full">
+                      {tag.icon} {tag.label}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              <div className="flex items-center gap-2 pt-2">
-                <Link
-                  href="/color-clash/practice"
-                  className="flex-1 py-2.5 bg-neutral-100 border-2 border-[#111111] rounded-xl font-black text-xs uppercase tracking-wider text-center shadow-[2px_2px_0px_#111111] hover:bg-neutral-200"
-                >
-                  Solo Practice
-                </Link>
+              <div className="flex items-center gap-2 mt-4">
                 <Link
                   href="/color-clash"
-                  className="flex-1 py-2.5 bg-[#FFC928] text-[#111111] border-2 border-[#111111] rounded-xl font-black text-xs uppercase tracking-wider text-center shadow-[2px_2px_0px_#111111] hover:bg-[#ffcf3e]"
+                  onClick={() => soundManager.playClick()}
+                  className="flex-1 py-2.5 sm:py-3 bg-[#FFC928] text-[#111111] border-2 border-[#111111] rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider text-center shadow-[2px_2px_0px_#111111] hover:bg-[#ffcf3e] transition-colors"
                 >
                   Play Color Clash →
                 </Link>
+                <Link
+                  href="/color-clash/practice"
+                  onClick={() => soundManager.playClick()}
+                  className="py-2.5 sm:py-3 px-4 bg-white border-2 border-[#111111] rounded-xl font-black text-xs uppercase text-center shadow-[2px_2px_0px_#111111] hover:bg-neutral-50 transition-colors"
+                >
+                  <Bot size={14} />
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* GAME MODES GRID */}
-        <section className="space-y-4">
-          <div className="flex items-center justify-between">
+        {/* ───── HOW WORDCHAIN WORKS ───── */}
+        <section className="doodle-card p-5 sm:p-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#111111] tracking-tight">Game Modes</h2>
-              <p className="text-xs sm:text-sm font-bold text-[#666666]">Choose how you want to battle</p>
+              <span className="text-[10px] sm:text-xs font-black uppercase text-[#888]">Simple Rules. Deep Strategy.</span>
+              <h2 className="text-xl sm:text-3xl font-black text-[#111111]">How WordChain Works</h2>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* 1. Quick Match */}
-            <div className="doodle-card p-5 flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
-              <div>
-                <div className="w-12 h-12 bg-[#FFC928] border-2 border-[#111111] rounded-2xl flex items-center justify-center shadow-[2px_2px_0px_#111111] mb-3">
-                  <Zap size={24} className="fill-[#111111]" />
-                </div>
-                <h3 className="text-lg font-black text-[#111111]">Quick Play</h3>
-                <p className="text-xs font-bold text-[#666666] mt-1">
-                  Jump into genuine matchmaking against active online players with compatible settings.
-                </p>
-              </div>
-              <Link
-                href="/matchmaking"
-                onClick={() => soundManager.playClick()}
-                className="mt-4 doodle-btn py-2 text-xs justify-center"
-              >
-                Find Match →
-              </Link>
-            </div>
-
-            {/* 2. Play with Friends */}
-            <div className="doodle-card p-5 flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
-              <div>
-                <div className="w-12 h-12 bg-[#80ED99] border-2 border-[#111111] rounded-2xl flex items-center justify-center shadow-[2px_2px_0px_#111111] mb-3">
-                  <Users size={24} />
-                </div>
-                <h3 className="text-lg font-black text-[#111111]">Play with Friends</h3>
-                <p className="text-xs font-bold text-[#666666] mt-1">
-                  Create a custom room, share your 6-letter room code, and battle your squad.
-                </p>
-              </div>
-              <Link
-                href="/create"
-                onClick={() => soundManager.playClick()}
-                className="mt-4 doodle-btn py-2 text-xs justify-center"
-              >
-                Create Room →
-              </Link>
-            </div>
-
-            {/* 3. Solo Practice vs Bot */}
-            <div className="doodle-card p-5 flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
-              <div>
-                <div className="w-12 h-12 bg-[#00F5D4] border-2 border-[#111111] rounded-2xl flex items-center justify-center shadow-[2px_2px_0px_#111111] mb-3">
-                  <Bot size={24} />
-                </div>
-                <h3 className="text-lg font-black text-[#111111]">Practice Mode</h3>
-                <p className="text-xs font-bold text-[#666666] mt-1">
-                  Train against AI monsters (Casual, Standard, Challenging) offline anytime.
-                </p>
-              </div>
-              <Link
-                href="/practice"
-                onClick={() => soundManager.playClick()}
-                className="mt-4 doodle-btn py-2 text-xs justify-center"
-              >
-                Play Solo →
-              </Link>
-            </div>
-
-            {/* 4. Local Multiplayer */}
-            <div className="doodle-card p-5 flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
-              <div>
-                <div className="w-12 h-12 bg-[#FF5D8F] border-2 border-[#111111] rounded-2xl flex items-center justify-center shadow-[2px_2px_0px_#111111] mb-3">
-                  <Trophy size={24} />
-                </div>
-                <h3 className="text-lg font-black text-[#111111]">Pass & Play</h3>
-                <p className="text-xs font-bold text-[#666666] mt-1">
-                  Multiple players taking turns on 1 shared device with privacy intermission.
-                </p>
-              </div>
-              <Link
-                href="/local"
-                onClick={() => soundManager.playClick()}
-                className="mt-4 doodle-btn py-2 text-xs justify-center"
-              >
-                Local Match →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* HOW TO PLAY DEMO CHAIN */}
-        <section className="doodle-card p-6 sm:p-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <div>
-              <span className="text-xs font-black uppercase text-[#888888]">Simple Rules. Deep Strategy.</span>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#111111]">How WordChain Works</h2>
-            </div>
-            <span className="text-xs font-bold bg-[#FFC928] px-3 py-1 rounded-full border-2 border-[#111111] shadow-[2px_2px_0px_#111111]">
+            <span className="text-[10px] sm:text-xs font-bold bg-[#FFC928] px-3 py-1 rounded-full border-2 border-[#111111] shadow-[2px_2px_0px_#111111] w-fit">
               The Last-Letter Rule
             </span>
           </div>
 
-          {/* Word Chain Visual Example */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 py-3 sm:py-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 py-2">
             {[
-              { word: 'CAT', nextLetter: 'T' },
-              { word: 'TOP', nextLetter: 'P' },
-              { word: 'PEN', nextLetter: 'N' },
-              { word: 'NET', nextLetter: 'T' },
-              { word: 'TAP', nextLetter: 'P' },
+              { word: 'CAT', last: 'T' },
+              { word: 'TOP', last: 'P' },
+              { word: 'PEN', last: 'N' },
+              { word: 'NET', last: 'T' },
+              { word: 'TAP', last: 'P' },
             ].map((step, idx) => (
               <React.Fragment key={idx}>
-                <div className="bg-white border-2 sm:border-[3px] border-[#111111] rounded-xl sm:rounded-2xl px-2.5 sm:px-4 py-1.5 sm:py-3 font-mono text-base sm:text-2xl font-black shadow-[2px_2px_0px_#111111] sm:shadow-[3px_3px_0px_#111111] flex items-center">
+                <div className="bg-white border-2 sm:border-[3px] border-[#111111] rounded-xl px-2.5 sm:px-4 py-1.5 sm:py-2.5 font-mono text-base sm:text-xl font-black shadow-[2px_2px_0px_#111111] sm:shadow-[3px_3px_0px_#111111] flex items-center">
                   <span>{step.word.slice(0, -1)}</span>
                   <span className="bg-[#FFC928] px-1 rounded border border-[#111111] ml-0.5">
-                    {step.word.slice(-1)}
+                    {step.last}
                   </span>
                 </div>
                 {idx < 4 && (
-                  <ArrowRight size={16} className="text-[#111111] stroke-[2.5] sm:stroke-[3] sm:w-[22px] sm:h-[22px]" />
+                  <ArrowRight size={14} className="text-[#111111] stroke-[3] sm:w-[18px] sm:h-[18px] shrink-0" />
                 )}
               </React.Fragment>
             ))}
           </div>
 
-          <p className="text-center text-xs sm:text-sm font-bold text-[#555555] max-w-xl mx-auto mt-4">
-            Every submission must start with the final letter of the previous word.
-            Reject non-dictionary words, duplicate submissions, and wrong lengths!
+          <p className="text-center text-xs sm:text-sm font-bold text-[#555] max-w-lg mx-auto mt-3">
+            Every word must start with the final letter of the previous word. Use trap letters (X, Z, Q) to eliminate opponents!
           </p>
         </section>
 
-        {/* PRESET SHOWCASE */}
+        {/* ───── GUIDES ───── */}
         <section className="space-y-4">
           <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#111111]">One-Click Presets</h2>
-              <p className="text-xs sm:text-sm font-bold text-[#666666]">Instant setups tested for balance</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {Object.entries(PRESETS).map(([key, p]) => (
-              <Link
-                key={key}
-                href={`/create?preset=${key}`}
-                onClick={() => soundManager.playClick()}
-                className="doodle-card p-5 flex flex-col justify-between hover:translate-y-[-2px] transition-transform group"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-base font-black text-[#111111]">{p.title}</span>
-                    <span className="text-xs font-mono font-bold bg-neutral-100 px-2 py-0.5 rounded border border-neutral-300 uppercase">
-                      {key}
-                    </span>
-                  </div>
-                  <p className="text-xs font-bold text-[#666666]">{p.description}</p>
-                </div>
-                <div className="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between text-xs font-black">
-                  <span>Configure</span>
-                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* SEO FAQ & WORD GAME EXPLANATION */}
-        <section className="space-y-6 pt-4 border-t-2 border-[#111111]/10">
-          <div className="text-center max-w-2xl mx-auto">
-            <span className="text-xs font-black uppercase tracking-wider text-[#111111] bg-[#FFC928] px-3 py-1 rounded-full border-2 border-[#111111] shadow-[2px_2px_0px_#111111]">
-              Word Game Guide
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-[#111111] mt-3">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xs sm:text-sm font-bold text-[#666666] mt-1">
-              Everything you need to know about playing WordChain online
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="doodle-card p-5 bg-white">
-              <h3 className="text-base font-black text-[#111111] mb-1.5">What is a Word Chain game?</h3>
-              <p className="text-xs sm:text-sm font-medium text-[#555555] leading-relaxed">
-                Word Chain (also known as Shiritori, Word Relay, or Last Letter game) is a sequential vocabulary battle where each player submits a word beginning with the last letter of the previous word.
-              </p>
-            </div>
-
-            <div className="doodle-card p-5 bg-white">
-              <h3 className="text-base font-black text-[#111111] mb-1.5">How do you win at WordChain?</h3>
-              <p className="text-xs sm:text-sm font-medium text-[#555555] leading-relaxed">
-                Outlast your opponents! Force them into rare starting letters like X, Z, and Q using trap words (like MATRIX or TOPAZ), or wait for their timer to run out.
-              </p>
-            </div>
-
-            <div className="doodle-card p-5 bg-white">
-              <h3 className="text-base font-black text-[#111111] mb-1.5">Can I play WordChain with friends?</h3>
-              <p className="text-xs sm:text-sm font-medium text-[#555555] leading-relaxed">
-                Yes! Simply click <Link href="/create" className="font-bold underline text-[#111111]">Create Match</Link> to generate a 6-character room code. Send the link to friends to play real-time elimination battles.
-              </p>
-            </div>
-
-            <div className="doodle-card p-5 bg-white">
-              <h3 className="text-base font-black text-[#111111] mb-1.5">Is WordChain completely free?</h3>
-              <p className="text-xs sm:text-sm font-medium text-[#555555] leading-relaxed">
-                100% free with no downloads, accounts, or paywalls required. Play right inside your web browser on mobile, tablet, or desktop.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* GUIDES & SEO SECTION */}
-        <section className="w-full max-w-4xl mx-auto px-4 py-8">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <span className="text-xs font-black uppercase tracking-wider bg-[#FFC928] px-2.5 py-1 rounded-full border border-[#111111]">
-                Master the Game
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#111111] mt-2">
-                Guides, Traps & Strategy
-              </h2>
-            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-[#111111]">Strategy Guides</h2>
             <Link
               href="/blog"
-              className="hidden sm:inline-flex items-center gap-1.5 text-xs font-black uppercase text-[#111111] bg-white border-2 border-[#111111] px-3.5 py-1.5 rounded-full shadow-[2px_2px_0px_#111111] hover:translate-y-[-1px] transition-transform"
+              className="text-xs font-black uppercase text-[#111] bg-white border-2 border-[#111] px-3 py-1.5 rounded-full shadow-[2px_2px_0px_#111] hover:translate-y-[-1px] transition-transform"
             >
               All Articles →
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Link
-              href="/blog/word-chain-game-online-free"
-              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
-                  Play Guide
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {[
+              { href: '/blog/word-chain-game-online-free', tag: 'Play Guide', title: 'Word Chain Game Online — Play Free' },
+              { href: '/blog/word-chain-words-a-to-z-dictionary', tag: 'Cheat Sheet', title: 'A to Z Word Chain Dictionary' },
+              { href: '/blog/hard-letters-word-chain-q-x-z-j', tag: 'Tactics', title: 'Words Ending in Q, X, Z & J' },
+              { href: '/blog/rgb-color-match-game-guide', tag: 'Color Clash', title: 'RGB Color Match Game Guide' },
+            ].map((guide, i) => (
+              <Link
+                key={i}
+                href={guide.href}
+                className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between group"
+              >
+                <div>
+                  <span className="text-[9px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111]">
+                    {guide.tag}
+                  </span>
+                  <h3 className="text-xs sm:text-sm font-black text-[#111] mt-2 leading-snug">
+                    {guide.title}
+                  </h3>
+                </div>
+                <span className="text-[10px] font-bold text-[#111] mt-2 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Read <ArrowRight size={10} />
                 </span>
-                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
-                  Word Chain Game Online — Play Free in 2026
-                </h3>
-                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
-                  Official guide to real-time multiplayer battles, rules, and AI practice modes.
-                </p>
-              </div>
-              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
-            </Link>
-
-            <Link
-              href="/blog/word-chain-words-a-to-z-dictionary"
-              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
-                  Cheat Sheet
-                </span>
-                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
-                  A to Z Word Chain Dictionary & Tactical List
-                </h3>
-                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
-                  Comprehensive lists of starting and ending words for difficult letters from A to Z.
-                </p>
-              </div>
-              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
-            </Link>
-
-            <Link
-              href="/blog/hard-letters-word-chain-q-x-z-j"
-              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
-                  Tactics
-                </span>
-                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
-                  Words Ending in Q, X, Z & J: The Ultimate Trap List
-                </h3>
-                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
-                  Trap your opponents with brutal ending letters they cannot answer before timeout.
-                </p>
-              </div>
-              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
-            </Link>
-
-            <Link
-              href="/blog/shiritori-word-chain-generator-solver"
-              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
-                  Solver Tips
-                </span>
-                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
-                  Word Chain Solver & Fast Next Word Strategies
-                </h3>
-                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
-                  How to retrieve high-probability words in under 3 seconds during intense blitz rounds.
-                </p>
-              </div>
-              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
-            </Link>
-
-            <Link
-              href="/blog/games-to-play-when-bored"
-              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
-                  Roundup
-                </span>
-                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
-                  15 Best Free Games to Play When Bored Online
-                </h3>
-                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
-                  Instant browser games with zero downloads or accounts required.
-                </p>
-              </div>
-              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
-            </Link>
-
-            <Link
-              href="/blog/what-is-word-chain-game"
-              className="doodle-card p-4 bg-white hover:bg-neutral-50 transition-colors flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-[10px] font-black uppercase tracking-wider bg-[#FFC928] px-2 py-0.5 rounded border border-[#111111]">
-                  Beginner
-                </span>
-                <h3 className="text-sm font-black text-[#111111] mt-2 leading-snug">
-                  What Is Word Chain? Complete Beginner Rules
-                </h3>
-                <p className="text-xs font-medium text-[#666666] mt-1 line-clamp-2">
-                  History, game variants like Shiritori and Word Relay, and official rules.
-                </p>
-              </div>
-              <span className="text-xs font-bold text-[#111111] mt-3 inline-block">Read Guide →</span>
-            </Link>
-          </div>
-
-          <div className="mt-4 text-center sm:hidden">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-[#111111] bg-white border-2 border-[#111111] px-4 py-2 rounded-full shadow-[2px_2px_0px_#111111]"
-            >
-              View All 18 Strategy Guides →
-            </Link>
+              </Link>
+            ))}
           </div>
         </section>
 
-        {/* BOTTOM MONSTER CROWD (From mockup) */}
-        <div className="w-full pt-4">
+        {/* ───── FAQ ───── */}
+        <section className="space-y-4 border-t-2 border-[#111]/10 pt-6">
+          <h2 className="text-xl sm:text-2xl font-black text-[#111111] text-center">FAQ</h2>
+
+          <div className="max-w-2xl mx-auto space-y-2">
+            {[
+              {
+                q: 'What is a Word Chain game?',
+                a: 'Word Chain (also known as Shiritori or Word Relay) is a vocabulary battle where each player submits a word beginning with the last letter of the previous word.',
+              },
+              {
+                q: 'How do you win at WordChain?',
+                a: 'Outlast your opponents! Force them into rare starting letters like X, Z, and Q using trap words, or wait for their timer to run out.',
+              },
+              {
+                q: 'What is Color Clash?',
+                a: 'Color Clash is an RGB color matching game. All players see a secret target color and adjust Red, Green, Blue sliders to match it. The closest match (by Euclidean distance) wins!',
+              },
+              {
+                q: 'Is everything free?',
+                a: '100% free with no downloads, accounts, or paywalls. Play right inside your browser on mobile, tablet, or desktop.',
+              },
+            ].map((faq, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                className="w-full doodle-card p-4 bg-white text-left"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="text-sm sm:text-base font-black text-[#111]">{faq.q}</h3>
+                  <ChevronDown
+                    size={16}
+                    className={`shrink-0 text-[#111] transition-transform ${openFaq === i ? 'rotate-180' : ''}`}
+                  />
+                </div>
+                {openFaq === i && (
+                  <p className="text-xs sm:text-sm font-medium text-[#555] mt-2 leading-relaxed">
+                    {faq.a}
+                  </p>
+                )}
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* Monster crowd */}
+        <div className="w-full">
           <DoodleCrowdBanner />
         </div>
       </main>
 
-      {/* RICH SEO FOOTER */}
-      <footer className="w-full border-t-2 border-[#111111] bg-white py-10 px-4 select-none">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-          <div>
+      {/* ───── FOOTER ───── */}
+      <footer className="w-full border-t-2 border-[#111111] bg-white py-8 sm:py-10 px-4 select-none">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mb-6">
+          <div className="col-span-2 sm:col-span-1">
             <div className="flex items-center gap-1.5 mb-2">
-              <span className="text-lg font-black text-[#111111]">WORD</span>
-              <span className="text-lg font-black bg-[#FFC928] px-1.5 py-0.2 rounded border border-[#111111]">CHAIN</span>
+              <span className="text-base sm:text-lg font-black text-[#111]">WORD</span>
+              <span className="text-base sm:text-lg font-black bg-[#FFC928] px-1.5 rounded border border-[#111]">CHAIN</span>
             </div>
-            <p className="text-xs font-bold text-[#666666] leading-relaxed">
-              The #1 real-time multiplayer word chain game. Powered by official English dictionary validation.
+            <p className="text-[10px] sm:text-xs font-bold text-[#666] leading-relaxed">
+              Free real-time multiplayer game arcade. Play word battles, color duels & more.
             </p>
           </div>
 
           <div>
-            <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Arcade Games</h4>
-            <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
-              <li><Link href="/" className="hover:text-[#111111]">WordChain (Word Relay)</Link></li>
-              <li><Link href="/color-clash" className="hover:text-[#111111]">Color Clash (RGB Matcher)</Link></li>
-              <li><Link href="/color-clash/practice" className="hover:text-[#111111]">Color Clash AI Practice</Link></li>
-              <li><Link href="/color-clash/local" className="hover:text-[#111111]">Color Clash 2-Player Local</Link></li>
+            <h4 className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#111] mb-2 sm:mb-3">Games</h4>
+            <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs font-bold text-[#555]">
+              <li><Link href="/matchmaking" className="hover:text-[#111]">WordChain</Link></li>
+              <li><Link href="/color-clash" className="hover:text-[#111]">Color Clash</Link></li>
+              <li><Link href="/practice" className="hover:text-[#111]">Solo Practice</Link></li>
+              <li><Link href="/local" className="hover:text-[#111]">Pass &amp; Play</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Popular Guides</h4>
-            <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
-              <li><Link href="/blog/word-chain-game-online-free" className="hover:text-[#111111]">Word Chain Game Online</Link></li>
-              <li><Link href="/blog/word-chain-words-a-to-z-dictionary" className="hover:text-[#111111]">A-Z Word Chain List</Link></li>
-              <li><Link href="/blog/shiritori-word-chain-generator-solver" className="hover:text-[#111111]">Word Chain Solver Tips</Link></li>
-              <li><Link href="/blog/games-to-play-when-bored" className="hover:text-[#111111]">Games to Play When Bored</Link></li>
-              <li><Link href="/blog" className="hover:text-[#111111]">All Blog Articles →</Link></li>
+            <h4 className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#111] mb-2 sm:mb-3">Guides</h4>
+            <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs font-bold text-[#555]">
+              <li><Link href="/blog/word-chain-game-online-free" className="hover:text-[#111]">Play Online Free</Link></li>
+              <li><Link href="/blog/word-chain-words-a-to-z-dictionary" className="hover:text-[#111]">A-Z Dictionary</Link></li>
+              <li><Link href="/blog/rgb-color-match-game-guide" className="hover:text-[#111]">Color Clash Guide</Link></li>
+              <li><Link href="/blog" className="hover:text-[#111]">All Articles →</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xs font-black uppercase tracking-wider text-[#111111] mb-3">Word Game Culture</h4>
-            <ul className="space-y-1.5 text-xs font-bold text-[#555555]">
-              <li><Link href="/blog/word-chain-game-for-classroom-students" className="hover:text-[#111111]">Classroom & ESL Guide</Link></li>
-              <li><Link href="/blog/word-ladder-vs-word-chain" className="hover:text-[#111111]">Word Ladder vs Word Chain</Link></li>
-              <li><Link href="/blog/shiritori-vs-word-chain" className="hover:text-[#111111]">Shiritori vs Word Chain</Link></li>
-              <li><Link href="/blog/what-is-word-chain-game" className="hover:text-[#111111]">Beginner Word Chain Guide</Link></li>
+            <h4 className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#111] mb-2 sm:mb-3">More</h4>
+            <ul className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs font-bold text-[#555]">
+              <li><Link href="/blog/what-is-word-chain-game" className="hover:text-[#111]">What Is Word Chain?</Link></li>
+              <li><Link href="/blog/shiritori-word-chain-generator-solver" className="hover:text-[#111]">Solver Tips</Link></li>
+              <li><Link href="/blog/games-to-play-when-bored" className="hover:text-[#111]">Games When Bored</Link></li>
+              <li><Link href="/create" className="hover:text-[#111]">Create Room</Link></li>
             </ul>
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto pt-6 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between text-xs font-bold text-[#777777] gap-3">
-          <p>© 2026 WordChain. Free online multiplayer word game.</p>
+        <div className="max-w-5xl mx-auto pt-4 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-xs font-bold text-[#777] gap-2">
+          <p>© 2026 WordChain. Free online multiplayer game arcade.</p>
           <div className="flex gap-4">
             <Link href="/blog" className="hover:underline">Blog</Link>
             <Link href="/create" className="hover:underline">Play Now</Link>

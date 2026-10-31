@@ -89,25 +89,33 @@ export default function ColorClashLocalPage() {
       { id: 'p2', guess: finalP2Guess, diff: diff2, accuracy: acc2 },
     ].sort((a, b) => a.diff - b.diff);
 
+    const updatedPlayers = [...players];
     const results = evaluated.map((item, rank) => {
       const pts = calculateRoundPoints(rank, item.accuracy);
-      const p = players.find(x => x.id === item.id)!;
-      p.score += pts;
-      p.lastRoundAccuracy = item.accuracy;
-      p.lastRoundPoints = pts;
+      const idx = updatedPlayers.findIndex(x => x.id === item.id);
+      if (idx !== -1) {
+        updatedPlayers[idx] = {
+          ...updatedPlayers[idx],
+          score: updatedPlayers[idx].score + pts,
+          lastRoundAccuracy: item.accuracy,
+          lastRoundPoints: pts,
+        };
+      }
 
       return {
-        playerId: p.id,
-        playerName: p.name,
-        avatarId: p.avatarId,
+        playerId: item.id,
+        playerName: updatedPlayers[idx]?.name ?? '',
+        avatarId: updatedPlayers[idx]?.avatarId ?? '',
         guess: item.guess,
         diff: Math.round(item.diff * 10) / 10,
         accuracy: item.accuracy,
         pointsEarned: pts,
-        totalScore: p.score,
+        totalScore: updatedPlayers[idx]?.score ?? 0,
         isWinner: rank === 0,
       };
     });
+
+    setPlayers(updatedPlayers);
 
     const roundSummary: ColorRoundResult = {
       roundNumber: currentRound,
@@ -283,7 +291,9 @@ export default function ColorClashLocalPage() {
         {status === 'game_over' && (
           <PodiumModal
             players={players}
-            winnerId={players[0]?.id || null}
+            winnerId={
+              [...players].sort((a, b) => b.score - a.score)[0]?.id || null
+            }
             onPlayAgain={handleRestart}
             isHost={true}
           />
