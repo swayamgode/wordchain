@@ -35,11 +35,17 @@ export const RoundReveal: React.FC<RoundRevealProps> = ({
           </h3>
         </div>
 
-        {/* Auto next round pill */}
-        <div className="flex items-center gap-1.5 bg-neutral-100 border border-[#111111] px-2.5 py-1 rounded-full text-xs font-mono font-black text-[#111111]">
-          <Clock size={13} />
-          <span>Next in {revealTimeLeft}s</span>
-        </div>
+        {/* Auto next round pill (hidden if revealTimeLeft is 0) */}
+        {revealTimeLeft > 0 ? (
+          <div className="flex items-center gap-1.5 bg-neutral-100 border border-[#111111] px-2.5 py-1 rounded-full text-xs font-mono font-black text-[#111111]">
+            <Clock size={13} />
+            <span>Next in {revealTimeLeft}s</span>
+          </div>
+        ) : (
+          <div className="flex items-center gap-1.5 bg-[#FFC928] border border-[#111111] px-2.5 py-1 rounded-full text-xs font-black text-[#111111]">
+            <span>Click Below To Advance</span>
+          </div>
+        )}
       </div>
 
       {/* Target Color Reveal Banner */}
@@ -78,7 +84,7 @@ export const RoundReveal: React.FC<RoundRevealProps> = ({
           Player Submissions
         </h4>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {result.results.map((res, index) => {
             const guessCss = rgbToCss(res.guess);
             const guessHex = rgbToHex(res.guess);
@@ -86,20 +92,20 @@ export const RoundReveal: React.FC<RoundRevealProps> = ({
             return (
               <div
                 key={res.playerId}
-                className={`p-3 rounded-xl border-2 border-[#111111] flex items-center justify-between shadow-[2px_2px_0px_#111111] transition-transform ${
+                className={`p-3.5 rounded-xl border-2 border-[#111111] flex items-center justify-between shadow-[2px_2px_0px_#111111] transition-transform ${
                   res.isWinner
-                    ? 'bg-[#FFC928]/30 border-2 border-[#111111] -translate-y-0.5'
+                    ? 'bg-[#FFC928]/30 -translate-y-0.5'
                     : 'bg-white'
                 }`}
               >
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2.5 min-w-0">
                   {/* Rank badge */}
-                  <div className="w-5 text-center font-black text-xs text-[#888888]">
+                  <div className="w-5 text-center font-black text-xs text-[#888888] shrink-0">
                     #{index + 1}
                   </div>
 
                   {/* Player Avatar */}
-                  <div className="relative">
+                  <div className="relative shrink-0">
                     <div className="w-9 h-9 rounded-full bg-white border border-[#111111] flex items-center justify-center overflow-hidden">
                       <MonsterAvatar id={res.avatarId} size={24} />
                     </div>
@@ -111,25 +117,25 @@ export const RoundReveal: React.FC<RoundRevealProps> = ({
                   </div>
 
                   {/* Name and Hex */}
-                  <div>
+                  <div className="min-w-0 pr-1">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-xs font-black text-[#111111] max-w-[100px] truncate">
+                      <span className="text-xs font-black text-[#111111] truncate max-w-[90px] sm:max-w-[120px]">
                         {res.playerName}
                       </span>
                       {res.isWinner && (
-                        <span className="text-[9px] font-black bg-amber-400 border border-[#111111] px-1 py-0.2 rounded uppercase">
+                        <span className="text-[9px] font-black bg-amber-400 border border-[#111111] px-1 py-0.2 rounded uppercase shrink-0">
                           Winner
                         </span>
                       )}
                     </div>
-                    <span className="text-[11px] font-mono font-bold text-[#666666]">
+                    <span className="text-[11px] font-mono font-bold text-[#666666] block">
                       {guessHex}
                     </span>
                   </div>
                 </div>
 
                 {/* Swatch & Accuracy */}
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2 shrink-0 pl-1">
                   <div className="text-right">
                     <span
                       className={`text-xs font-black block font-mono ${
@@ -148,7 +154,7 @@ export const RoundReveal: React.FC<RoundRevealProps> = ({
                   </div>
 
                   <div
-                    className="w-8 h-8 rounded-lg border border-[#111111] shadow-[1px_1px_0px_#111111] shrink-0"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg border-2 border-[#111111] shadow-[1px_1px_0px_#111111] shrink-0"
                     style={{ backgroundColor: guessCss }}
                   />
                 </div>

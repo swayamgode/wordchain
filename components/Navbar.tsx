@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
               CHAIN
             </span>
           </div>
-          <p className="hidden sm:block text-xs font-bold text-[#666666] tracking-wide">Think fast. Chain words.</p>
+          <p className="hidden sm:block text-[11px] font-black uppercase tracking-wider text-[#666666]">Multiplayer Game Arcade</p>
         </div>
       </Link>
 
