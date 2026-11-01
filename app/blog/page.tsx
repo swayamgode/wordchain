@@ -4,6 +4,7 @@ import { Navbar } from '../../components/Navbar';
 import { Footer } from '../../components/Footer';
 import { AdContainer } from '../../components/ads/AdContainer';
 import { AdUnit } from '../../components/ads/AdUnit';
+import { getAllPostsSorted } from '../../lib/posts';
 
 export const metadata: Metadata = {
   title: 'Word Game Blog — Guides, Trap Words & Strategies | WordChain',
@@ -207,6 +208,7 @@ const blogPosts = [
 ];
 
 export default function BlogPage() {
+  const blogPosts = getAllPostsSorted();
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

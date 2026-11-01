@@ -4,18 +4,10 @@ import { Navbar } from '../../../components/Navbar';
 import { Footer } from '../../../components/Footer';
 import { AdContainer } from '../../../components/ads/AdContainer';
 import { AdUnit } from '../../../components/ads/AdUnit';
-
-type BlogContent = {
-  title: string;
-  description: string;
-  keywords: string[];
-  date: string;
-  readTime: string;
-  faq?: Array<{ question: string; answer: string }>;
-  content: string;
-};
+import { additionalPosts, type BlogContent } from '../../../lib/posts/additionalPosts';
 
 const posts: Record<string, BlogContent> = {
+  ...additionalPosts,
   'rgb-color-match-game-guide': {
     title: 'RGB Color Matching Game: How to Play, Hex Codes & Strategy Guide (2026)',
     description: 'Master the multiplayer RGB color matching game! Learn how Red, Green, and Blue sliders work, color mixing formulas, Euclidean distance scoring, and top tricks to win Color Clash.',
@@ -1183,6 +1175,8 @@ Linguistic stimulation encourages the development of new synaptic connections (s
     `,
   },
 };
+
+export { posts };
 
 type Params = Promise<{ slug: string }>;
 
